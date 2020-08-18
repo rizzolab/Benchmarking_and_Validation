@@ -1,1 +1,41 @@
-This is where Chris will explain about pose repoduction protocol.
+Pose Reproduction is a test which will assess the ability of DOCK to reproduce crystallographic protein ligand poses
+
+### This series of scripts uses an already built and tested set of protein ligand systems. If you would like to build a different test set or add systems to your
+own version use scripts run.000 - run.004 found in DOCK6_Screening_Protocols ###
+
+##############################
+Step 1: 
+a) If submitting to the queue (recommended)
+
+	"" sbatch submit.sh ""
+
+This will submit the script FLX.sh to the queue. You may change the partition if you wish to use a different cluster. 
+It is recommended to use the long core as this test takes ~ 30 hours when run in serial. 
+
+b) If running on a local computer
+
+	"" bash FLX.sh clean.systems.all ""
+
+In both cases FLX.sh will create a subdirectory for every PDB system within the directory the script is submitted in. 
+The script will automate flexible docking for each system using the standard lab protocols.
+
+##############################
+Step 2:
+Once the prior step has been run in full (if submitted to the queue use the command "" squeue -u username "" to check if it is still running) 
+run the analysis script below. You should have anaconda/3 loaded ( "" module load anaconda/3 ""). Run this script in the original PoseReproduction top directory where
+step 1 scripts were submitted.
+
+	"" python calculate_results.py FLX clean.systems.all Pose_Reproduction ""
+
+This script takes 3 parameters which are specified above. The third parameter is the name of the csv that will be 
+generated and may be changed. This will print Success, Scoring Failure and Sampling Failure statistics to the screen and will also generate a large 
+csv of numerous descriptors.
+
+##############################
+Step 3: This step is not required, but can be used to create preformatted plots and graphs. Once again run it in the same directory as all other scripts have been 
+submitted in.
+
+	"" python Pose_Reproduction_plots.py Pose_Reproduction 1 / 2 / 3 ""
+
+The first input parameter is the name of the csv you chose in the previous step. The second input parameter is either (1, 2 or 3). Only choose a single number. 
+This gives the option of three different plots based on the option you choose.
