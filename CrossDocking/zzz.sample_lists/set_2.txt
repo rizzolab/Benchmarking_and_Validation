@@ -1,0 +1,5 @@
+COX
+Carboxypeptidase_A
+IGF1_R
+Streptavidin
+CDK

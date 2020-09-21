@@ -1,0 +1,15 @@
+cd ${CROSSDOCK_DIR}
+set family_list="${LIST_DIR}/family_more_than7.txt"
+foreach ref_fam (`cat $family_list`)
+mkdir ${ref_fam}
+
+ 
+set list_of_sys1="${LIST_DIR}/${ref_fam}.txt"
+foreach ref_system (`cat $list_of_sys1`) 
+mkdir ./${ref_fam}/${ref_system}
+
+
+cp ${BUILD_DIR}/${ref_system}/001.lig-prep/${ref_system}.lig.am1bcc.mol2 ${ref_fam}/${ref_system} 
+cp ${BUILD_DIR}/${ref_system}/004.grid/${ref_system}.rec* ${ref_fam}/${ref_system} 
+done
+done

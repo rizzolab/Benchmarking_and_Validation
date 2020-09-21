@@ -1,1 +1,14 @@
-This is the Rizzo protocol for Cross dockign and associated input files and anaylsis scripts. 
+This is where the Rizzo protocols are outlined with input files and anaylsis scripts.
+This directory will be used to align all systems in a family to a single reference. This step is only to be done if you are building a new set for crossdocking 
+besides the already built and prepared set.
+
+You will need text files for:
+- A list of Family names.
+- A text file titled for each Family name containing the list of PDB codes in that family. (The first in the list will be used as the reference ...
+it may be wise to use the receptor with the most residues or highest resolution as the reference at your discrepency)
+
+A SAMPLE STRUCTURE OF THIS IS PROVIDED IN: Sample_Family_List_and_Codes
+
+The script which accomplishes this aligntment is called with:
+
+	""  tcsh run.match.complex.csh ""
