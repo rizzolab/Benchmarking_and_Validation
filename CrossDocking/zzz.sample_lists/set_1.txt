@@ -1,5 +1,0 @@
-Adenosine_Deaminase
-Dihydrofolate_Reductase
-OMP_Decarboxylase
-Ribonuclease_T1
-Tryptophan_Synthase

@@ -7,8 +7,11 @@ RELIST_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking
 
 cd ${CROSSDOCK_DIR}
 
-list_of_fam="${LIST_DIR}/set_${1}_family.txt"
+echo "Sorting results for family: "
+
+list_of_fam="${LIST_DIR}/family_more_than7.txt"
 for ref_fam in `cat ${list_of_fam}`; do
+echo ${ref_fam}
 cd ${ref_fam}
 rm *outcome.txt
 

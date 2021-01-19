@@ -24,7 +24,7 @@
     setenv DMSHOMEWORK /gpfs/projects/rizzo/zzz.programs/dms
 
 	### Root directory (the directory where all run.xxx.csh scripts are located)
-	setenv VS_ROOTDIR  /gpfs/projects/rizzo/ccorbo/DOCK6_with_ambpdb
+	setenv VS_ROOTDIR  ${BUILD_DIR}
 
     ### MPI directory (this is where mpirun is located, compatible with dock6.mpi)
     setenv VS_MPIDIR /gpfs/software/intel/parallel-studio-xe/2018_3/compilers_and_libraries/linux/mpi/intel64

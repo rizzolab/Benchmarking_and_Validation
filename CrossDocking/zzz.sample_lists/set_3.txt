@@ -1,5 +1,0 @@
-Thymidylate_Synthase
-Hsp_90
-T4_Lysozyme
-Ribonuclease_A
-EGFR

@@ -1,4 +1,0 @@
-MMP
-Phosphodiesterase
-Phospholipase
-PPAR_Kinase

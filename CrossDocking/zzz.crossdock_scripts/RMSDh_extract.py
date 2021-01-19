@@ -18,25 +18,27 @@ if RMSDh_min_float > 2.0:
 else:
 ###########
 ### If the minimized mol2 deviated by less than 2.0 RMSDh the docked output mol2 is checked for its outcome
-	inputfilename = sys.argv[2]
+	try:
+	   inputfilename = sys.argv[2]
 
-	file_name = 'inputfilename'
+	   file_name = 'inputfilename'
 
-	with open(inputfilename) as file_object:
-  	 lines = file_object.readlines()
-	my_list=[]
-	for line in lines:
-		if "RMSDh" in line:
-			RMSDh = line.split()
-			RMSDh_float = float((RMSDh[2]))
-			my_list.append(RMSDh_float)
-	if my_list[0] < 2.0:
-		print("3") #Success
+	   with open(inputfilename) as file_object:
+  	    lines = file_object.readlines()
+	   my_list=[]
+	   for line in lines:
+		   if "RMSDh" in line:
+			   RMSDh = line.split()
+			   RMSDh_float = float((RMSDh[2]))
+			   my_list.append(RMSDh_float)
+	   if my_list[0] < 2.0:
+		   print("3") #Success
 
-	else:
-		my_list.sort()
-		if my_list[0] < 2.0:
-			print("2") #Score Failure
-		else:
-			print("1") #Sample Failure
-	
+	   else:
+		   my_list.sort()
+		   if my_list[0] < 2.0:
+			   print("2") #Score Failure
+		   else:
+			   print("1") #Sample Failure
+	except IndexError:  # IF docking did not run successfully there will be no file
+	   print("1") #Sample Failure	
