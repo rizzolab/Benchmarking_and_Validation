@@ -10,7 +10,7 @@ foreach family (`cat $family_list`)
 mkdir ${family}
 cd ${family}
 
-set list = "/gpfs/projects/rizzo/ccorbo/test_set/${family}.txt"
+set list = "${LIST_DIR}/${family}.txt"
 
 set ref  = `head -1 $list`
 
