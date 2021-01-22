@@ -1,8 +1,9 @@
 #!/bin/sh
 
 CROSSDOCK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock" 
+
 cd ${CROSSDOCK_DIR}
-list_of_fam="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/set_${1}.txt"
+list_of_fam="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/family_more_than7.txt"
 for ref_fam in `cat ${list_of_fam}`; do  ### Open for loop 1
 cd ${ref_fam}
 

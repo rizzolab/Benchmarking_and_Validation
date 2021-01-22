@@ -1,0 +1,4 @@
+Carboxypeptidase_A
+Ribonuclease_A
+HMG_CoA_Reductase
+Thrombin

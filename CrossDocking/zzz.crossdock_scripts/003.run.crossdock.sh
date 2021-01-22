@@ -4,8 +4,6 @@ cd ${CROSSDOCK_DIR}
 
 ref_fam="${1}"
 cd ${ref_fam}
-echo -n "Running Family: "
-echo ${ref_fam}
 
 ref_system="${2}"
 cd ${ref_system}
