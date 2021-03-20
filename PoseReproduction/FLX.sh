@@ -1,17 +1,12 @@
 #!/usr/bin/sh
 
-### Initializing timer for docking experiment
-start=$SECONDS
-
 # This script requires a list of system names, and will create a subdirectory for each system in the directory where this script is run
 
-system_file=${1}  
-system_dir=`pwd`
+system=${1}  
+system_dir=${2}
 
-for system in `cat ${system_file}`; do  ### Open for loop 1
-
-mkdir ${system}/FLX
-cd ${system}/FLX
+mkdir ${system}
+cd ${system}
 
 
 cat >FLX.in<<EOF
@@ -95,12 +90,7 @@ EOF
 
 dock6 -i FLX.in -o FLX.out
 
-cd ../..
+cd ../
 
-done   ### Close for loop 1
 
-### Close out timer (This will tell how long to dock all systems. Divide by number of systems to get seconds per system.)
-duration=$((SECONDS - start))
-echo -n $duration >> timing.out
-echo -n " seconds for all systems to complete Docking."
 
