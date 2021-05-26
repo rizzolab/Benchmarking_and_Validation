@@ -1,0 +1,94 @@
+1BCD  0.041839287234042524 cah2 1BCD Carbonic anhydrase II
+1ZW5  0.06403813829787236 fpps 1ZW5 Farnesyl diphosphate synthase
+2V3F  0.08178795744680854 glcm 2V3F Beta-glucocerebrosidase
+1MV9  0.08990226595744683 rxra 1MV9 Retinoid X receptor alpha
+1QW6  0.09377708510638302 nos1 1QW6 Nitric-oxide synthase, brain
+3ODU  0.09680854255319148 cxcr4 3ODU C-X-C chemokine receptor type 4
+1SQT  0.09853967021276594 urok 1SQT Urokinase-type plasminogen activator
+1VSO  0.1023295531914894 grik1 1VSO Glutamate receptor ionotropic kainate 1
+3CQW  0.11132392553191489 akt1 3CQW Serine/threonine-protein kinase AKT
+2AZR  0.11877182978723401 ptn1 2AZR Protein-tyrosine phosphatase 1B
+2AM9  0.11956507446808515 andr 2AM9 Androgen Receptor
+2AA2  0.12110044680851068 mcr 2AA2 Mineralocorticoid receptor
+1LI4  0.12254310638297879 sahh 1LI4 Adenosylhomocysteinase
+2B8T  0.12269782978723404 kith 2B8T Thymidine kinase
+3BGS  0.1241671914893617 pnph 3BGS Purine nucleoside phosphorylase
+1LRU  0.12912170212765958 def 1LRU Peptide deformylase
+3BWM  0.12952881914893621 comt 3BWM Catechol O-methyltransferase
+1L2S  0.12965132978723407 ampc 1L2S Beta-lactamase
+3F9M  0.13247557446808508 hxk4 3F9M Hexokinase type IV
+3D0E  0.1380429680851064 akt2 3D0E Serine/threonine-protein kinase AKT2
+3EQH  0.13880125531914894 mp2k1 3EQH Dual specificity mitogen-activated protein kinase kinase 1
+3EML  0.14117250000000003 aa2ar 3EML Adenosine A2a receptor
+3HMM  0.14421236170212762 tgfr1 3HMM TGF-beta receptor type I
+2I78  0.15077492553191493 dpp4 2I78 Dipeptidyl peptidase IV
+3G0E  0.15090763829787232 kit 3G0E Stem cell growth factor receptor
+2OI0  0.1512715212765957 ada17 2OI0 ADAM17
+1UYG  0.15464538297872343 hs90a 1UYG Heat shock protein HSP 90-alpha
+3KGC  0.15625631914893617 gria2 3KGC Glutamate receptor ionotropic, AMPA 2
+2ETR  0.15939338297872346 rock1 2ETR Rho-associated protein kinase 1
+3NY8  0.15962169148936167 adrb2 3NY8 Beta-2 adrenergic receptor
+3D4Q  0.16020503191489363 braf 3D4Q Serine/threonine-protein kinase B-raf
+3LPB  0.16119925531914894 jak2 3LPB Tyrosine-protein kinase JAK2
+3BZ3  0.16404014893617022 fak1 3BZ3 Focal adhesion kinase 1
+2OJ9  0.16464517021276603 igf1r 2OJ9 Insulin-like growth factor I receptor
+2OJG  0.16500381914893622 mk01 2OJG MAP kinase ERK2
+2VT4  0.16794761702127659 adrb1 2VT4 Beta-1 adrenergic receptor
+1E66  0.1692094468085106 aces 1E66 Acetylcholinesterase
+2CNK  0.17083520212765965 casp3 2CNK Caspase-3
+3F07  0.17198182978723395 hdac8 3F07 Histone deacetylase 8
+3BQD  0.17199599999999995 gcr 3BQD Glucocorticoid receptor
+2OWB  0.17295211702127658 plk1 2OWB Serine/threonine-protein kinase PLK1
+3PBL  0.17344643617021283 drd3 3PBL Dopamine D3 receptor
+3MAX  0.17582513829787239 hdac2 3MAX Histone deacetylase 2
+3LAN  0.1762432340425532 hivrt 3LAN Human immunodeficiency virus type 1 reverse transcriptase
+3C4F  0.17716625531914887 fgfr1 3C4F Fibroblast growth factor receptor 1
+2P2I  0.1773408617021277 vgfr2 2P2I Vascular endothelial growth factor receptor 2
+1R9O  0.17806113829787232 cp2c9 1R9O Cytochrome P450 2C9
+2HZI  0.17901017021276594 abl1 2HZI Tyrosine-protein kinase ABL
+3KRJ  0.1796979255319149 csf1r 3KRJ Macrophage colony stimulating factor receptor
+1NJS  0.18042089361702124 pur2 1NJS GAR transformylase
+1SJ0  0.18085859574468086 esr1 1SJ0 Estrogen receptor alpha
+3NXO  0.18086889361702127 dyr 3NXO Dihydrofolate reductase
+3LN1  0.18093707446808507 pgh2 3LN1 Cyclooxygenase-2
+2ICA  0.18211248936170216 ital 2ICA Leukocyte adhesion glycoprotein LFA-1 alpha
+3L5D  0.18227774468085103 bace1 3L5D Beta-secretase 1
+3KL6  0.18278980851063828 fa10 3KL6 Coagulation factor X
+3HL5  0.1828550851063829 xiap 3HL5 Inhibitor of apoptosis protein 3
+2QD9  0.1830932021276596 mk14 2QD9 MAP kinase p38 alpha
+1UDT  0.18325781914893624 pde5a 1UDT Phosphodiesterase 5A
+2RGP  0.1834123829787234 egfr 2RGP Epidermal growth factor receptor erbB1
+3KBA  0.1834703617021277 prgr 3KBA Progesterone receptor
+3LQ8  0.1843192021276596 met 3LQ8 Hepatocyte growth factor receptor
+1B9V  0.18536902127659574 nram 1B9V Neuraminidase
+2OF2  0.1887649574468085 lck 2OF2 Tyrosine-protein kinase LCK
+3EL8  0.18957915957446808 src 3EL8 Tyrosine-protein kinase SRC
+1Q4X  0.19001907446808505 thb 1Q4X Thyroid hormone receptor beta-1
+2HV5  0.1901857234042553 aldr 2HV5 Aldose reductase
+3E37  0.19097699999999995 fnta 3E37 Protein farnesyltransferase/geranylgeranyltransferase type I alpha subunit
+1W7X  0.1914115957446809 fa7 1W7X Coagulation factor VII
+830C  0.19392373404255323 mmp13 830C Matrix metalloproteinase 13
+1SYN  0.19394790425531908 tysy 1SYN Thymidylate synthase
+3NF7  0.19428362765957438 hivint 3NF7 Human immunodeficiency virus type 1 integrase
+2GTK  0.19762379787234036 pparg 2GTK Peroxisome proliferator-activated receptor gamma
+3G6Z  0.19832276595744677 reni 3G6Z Renin
+3BIZ  0.1988802127659575 wee1 3BIZ Serine/threonine-protein kinase WEE1
+3M2W  0.19981201063829784 mapk2 3M2W MAP kinase-activated protein kinase 2
+1XL2  0.20018345744680852 hivpr 1XL2 Human immunodeficiency virus type 1 protease
+2I0E  0.2018117872340425 kpcb 2I0E Protein kinase C beta
+1KVO  0.20243326595744673 pa2ga 1KVO Phospholipase A2 group IIA
+1C8K  0.20269905319148937 pygm 1C8K Muscle glycogen phosphorylase
+2ZDT  0.20349317021276603 mk10 2ZDT c-Jun N-terminal kinase 3
+2FSZ  0.20351506382978726 esr2 2FSZ Estrogen receptor beta
+3L3M  0.2072313510638297 parp1 3L3M Poly [ADP-ribose] polymerase-1
+1J4H  0.20900307446808514 fkb1a 1J4H FK506-binding protein 1A
+2E1W  0.20949959574468083 ada 2E1W Adenosine deaminase
+3CJO  0.2102301702127659 kif11 3CJO Kinesin-like protein 1
+2P54  0.21367451063829776 ppara 2P54 Peroxisome proliferator-activated receptor alpha
+3CHP  0.21371490425531892 lkha4 3CHP Leukotriene A4 hydrolase
+1YPE  0.2146661382978723 thrb 1YPE Thrombin
+2ZNP  0.21470014893617012 ppard 2ZNP Peroxisome proliferator-activated receptor delta
+3BKL  0.2172191914893617 ace 3BKL Angiotensin-converting enzyme
+2OYU  0.2208590744680851 pgh1 2OYU Cyclooxygenase-1
+3CCW  0.2235690425531915 hmdh 3CCW HMG-CoA reductase
+2ZEC  0.22924870212765955 tryb1 2ZEC Tryptase beta-1
