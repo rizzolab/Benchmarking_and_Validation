@@ -1,14 +1,47 @@
-This is where the Rizzo protocols are outlined with input files and anaylsis scripts.
-This directory will be used to align all systems in a family to a single reference. This step is only to be done if you are building a new set for crossdocking 
-besides the already built and prepared set.
+This is where the Rizzo lab crossdocking protocols and anaylsis scripts are contained.
 
 You will need text files for:
-- A list of Family names.
-- A text file titled for each Family name containing the list of PDB codes in that family. (The first in the list will be used as the reference ...
+- A list of crossdocking family names.
+- A text file titled for each family name containing the list of PDB codes in that family. (The first in the list will be used as the reference ...
 it may be wise to use the receptor with the most residues or highest resolution as the reference at your discrepency)
+An example of these lists (which are also the most up to date for those used in the Rizzo lab) is in the directory "" zzz.sample_lists ""
 
-A SAMPLE STRUCTURE OF THIS IS PROVIDED IN: Sample_Family_List_and_Codes
+*** IF YOU ARE CONSTRUCTING YOUR OWN SETS OF FAMILIES DELETE EVERYTHING FROM zzz.sample_lists before creating your own lists. Use the same naming 
+scheme provided if doing so. ***
 
-The script which accomplishes this aligntment is called with:
+Follow the sequence of scripts called here. Wait until each is finished before proceeding to the next.
 
-	""  tcsh run.match.complex.csh ""
+This step is called in each of the first 3 csh scripts. *** Change the working directory to the appropriate path before running any steps ***
+   tcsh
+   source 000.source.env.csh
+
+This script will take several hours to run.
+   sbatch 001.align.submit.csh
+ 
+The next step may potentially hit the wall clock. Split the family list in half if need be and submit two jobs.
+   sbatch 002a.build.submit.csh
+
+The following script is fast and can be run on the head node.
+   bash 002b.transfer.csh
+
+Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
+   bash 003a.write.files.sh
+
+The next step runs the crossdocking. This will hit the wall clock for the entire set of families in the sample provided. For this reason
+it is done in sets of families. They should be placed in zzz.sample_lists/set_N.txt where N is the number of sets. Samples are provided here.
+You need to specify the set being used here and submit this script separately for each set.
+   sbatch 003b.run.crossdock.sh 
+
+Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
+   bash 004.results.sh
+
+Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
+   bash 005.sort.lists.sh
+
+Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
+   bash 006.rerun.results.sh
+
+Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
+   bash 007.make.heatmaps.sh 
+
+

@@ -1,11 +1,14 @@
+#This script calls Make_plot.py which will print the statistics for all families to Statistics.txt and make a heatmap for each family in the HeatMaps directory
+
 module unload anaconda/2
 module load anaconda/3
 
-LIST_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists"
-CROSSDOCK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock"
-SCRIPT_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock_scripts"
-RELIST_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.rearrange_lists"
-WORK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking"
+WORK_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking"
+CROSSDOCK_DIR="${WORK_DIR}/zzz.crossdock"
+LIST_DIR="${WORK_DIR}/zzz.sample_lists"
+SCRIPT_DIR="${WORK_DIR}/zzz.crossdock_scripts"
+RELIST_DIR="${WORK_DIR}/zzz.rearrange_lists"
+
 
 mkdir ${WORK_DIR}/HeatMaps
 

@@ -6,6 +6,8 @@
 #SBATCH --job-name=Set_8
 #SBATCH --output=Set_8.out
 
+# This script runs the cartesian minimization and docking set up in the last step. Make sure to specify the set being used in line below.
+
 list_of_fam="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/set_8.txt"
 for ref_fam in `cat ${list_of_fam}`; do
 echo -n "Running Family: "

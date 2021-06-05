@@ -1,4 +1,5 @@
 #!/bin/sh
+# This script will coordinate submitting docking jobs in appropriate directories
 CROSSDOCK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock"
 cd ${CROSSDOCK_DIR}
 

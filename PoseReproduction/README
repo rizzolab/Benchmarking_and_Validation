@@ -1,20 +1,21 @@
 Pose Reproduction is a test which will assess the ability of DOCK to reproduce crystallographic protein ligand poses
 
-### This series of scripts uses an already built and tested set of protein ligand systems. If you would like to build a different test set or add systems to your
-own version use scripts run.000 - run.004 found in DOCK6_Screening_Protocols ###
+This series of scripts uses an already built and tested set of protein ligand systems. If you would like to build a different test set or add systems to your
+own version use scripts run.000 - run.004 found in DOCK6_Screening_Protocols 
+
 
 ##############################
 Step 1: 
-a) If submitting to the queue (recommended)
+a) If submitting to the queue (recommended) Set the path to the list of PDB codes being used and the testset being used in the script "" submit.sh ""
 
 	"" sbatch submit.sh ""
 
-This will submit the script FLX.sh to the queue. You may change the partition if you wish to use a different cluster. 
-It is recommended to use the long core as this test takes ~ 30 hours when run in serial. 
+This will submit the script FLX.sh to the queue. Specify a text file with all PDB codes and the path to the testset directory in the submit script. You may change the partition if you wish to use a different cluster. 
+This takes ~ 1 hour when run on 24 core machine. 
 
 b) If running on a local computer
 
-	"" bash FLX.sh clean.systems.all ""
+	"" bash FLX.sh clean.systems.all TestsetDirectory ""
 
 In both cases FLX.sh will create a subdirectory for every PDB system within the directory the script is submitted in. 
 The script will automate flexible docking for each system using the standard lab protocols.
@@ -27,7 +28,7 @@ step 1 scripts were submitted.
 
 	"" python calculate_results.py FLX clean.systems.all Pose_Reproduction ""
 
-This script takes 3 parameters which are specified above. The third parameter is the name of the csv that will be 
+This script takes 3 parameters which are specified above. The first parameter is FLX, while the second is the list of all PDB codes. The third parameter is the name of the csv that will be 
 generated and may be changed. This will print Success, Scoring Failure and Sampling Failure statistics to the screen and will also generate a large 
 csv of numerous descriptors.
 

@@ -6,6 +6,7 @@
 #SBATCH --job-name=CD_Trans
 #SBATCH --output=CrossDock_Trans
 
+# This script builds all of the aligned systems and if a system fails to build its PDB code gets printed to Incomplete_Builds.txt
 tcsh
 source 000.source.env.csh
 

@@ -1,8 +1,12 @@
+# This script calls RMSDh_extract.py which gets the RMSD for cartesian minimization and all output poses for each crossdocking pair
+
 module unload anaconda/2
 module load anaconda/3
-LIST_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists"
-CROSSDOCK_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock"
-SCRIPT_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock_scripts"
+
+WORK_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking"
+CROSSDOCK_DIR="${WORK_DIR}/zzz.crossdock"
+LIST_DIR="${WORK_DIR}/zzz.sample_lists"
+SCRIPT_DIR="${WORK_DIR}/zzz.crossdock_scripts"
 cd ${CROSSDOCK_DIR}
 
 echo "Getting results for family: "

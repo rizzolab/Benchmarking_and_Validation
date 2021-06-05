@@ -1,3 +1,9 @@
+# This script makes a heatmap based on crossdocking results for a family and also prints out the docking statistics for cognate pairs in a family plus all
+# off diagonal pairs
+# Written by: Christopher Corbo
+# Affiliation: Rizzo Lab, Stony Brook University
+# Last Edit Date: 02/2021
+# Last Edit by: Christopher Corbo
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
@@ -31,17 +37,21 @@ for i in range(len(filelist)): # This loop specifies which list is being read
 mat = megalist
 ##########################################
 # Calculating statistics to be written out
+# N is the size of the crossdocking family
 N = len(megalist)
 
+#Initializing the counters for all outcomes
 incomp = 0         
 samp_f = 0
 score_f = 0
 succ = 0
 
+# This will keep track of cognate pair results
 cog_samp_f = 0
 cog_score_f = 0
 cog_succ = 0
 
+# Assesses every value in the matrix of crossdocking results
 for i in range(N):
    for j in range(N):
       if mat[i][j] == 0:
@@ -53,6 +63,7 @@ for i in range(N):
       if mat[i][j] == 3:
          succ = succ + 1
 
+      #Only assessing on diagonal cognate pairs
       if i == j:
          if mat[i][j] == 1:
             cog_samp_f = cog_samp_f + 1
@@ -61,15 +72,18 @@ for i in range(N):
          if mat[i][j] == 3:
             cog_succ = cog_succ + 1
 
+#Calculate Percentage
 incomp_rate = incomp / ( N * N * 0.01)
 samp_f_rate = samp_f / ( N * N * 0.01)
 score_f_rate = score_f / ( N * N * 0.01)
 succ_rate = succ / ( N * N * 0.01)
 
+#Calculate Percentage
 cog_samp_f_rate = cog_samp_f / ( N * 0.01)
 cog_score_f_rate = cog_score_f / ( N * 0.01)
 cog_succ_rate = cog_succ / ( N * 0.01)
 
+#Print out results
 print("The size of family is " + str(len(megalist)))
 print(" ")
 
@@ -88,11 +102,15 @@ print(" ")
 print("+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+")
 print(" ")
 #########################################
-# Formatting based on size
+# Formatting based on size of family
+# Color map associated with results (blue success, green scoring failure, red sampling failure, gray incompatible)
 cmap = ListedColormap(['#A0A0A0','r','g','b'])
 if N < 18:
+   # font size of labels
    fontsz = 12
+   # bullet size on diagonal elements
    marksz = 5
+   # size of grid lines
    linesz = 1.4
 elif N < 28:
    fontsz = 9

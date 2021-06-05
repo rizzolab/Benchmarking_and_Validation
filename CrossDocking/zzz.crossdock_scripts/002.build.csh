@@ -1,4 +1,6 @@
 #!/bin/tcsh
+# This script will run the scripts to prepare all of the files necessary for constructing aligned crossdocking systems 
+# Namely (ligand and receptor mol2, spheres files and grid files)
 module unload anaconda/3
 module load anaconda/2
 

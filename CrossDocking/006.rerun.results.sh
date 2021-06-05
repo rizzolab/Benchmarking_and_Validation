@@ -1,9 +1,13 @@
+# This script takes the ordering determined in the previous step and reorganizes the actual data in the same order
+
 module unload anaconda/2
 module load anaconda/3
-LIST_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists"
-CROSSDOCK_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock"
-SCRIPT_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock_scripts"
-RELIST_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.rearrange_lists"
+
+WORK_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking"
+CROSSDOCK_DIR="${WORK_DIR}/zzz.crossdock"
+LIST_DIR="${WORK_DIR}/zzz.sample_lists"
+SCRIPT_DIR="${WORK_DIR}/zzz.crossdock_scripts"
+RELIST_DIR="${WORK_DIR}/zzz.rearrange_lists"
 
 cd ${CROSSDOCK_DIR}
 

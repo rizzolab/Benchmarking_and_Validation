@@ -6,6 +6,8 @@
 #SBATCH --job-name=CD_Align
 #SBATCH --output=CrossDock_Align
 
+# This script calls 001.align.csh which aligns crossdocking families
+
 tcsh
 source 000.source.env.csh
 tcsh  zzz.crossdock_scripts/001.align.csh

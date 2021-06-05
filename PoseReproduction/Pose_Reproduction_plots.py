@@ -1,3 +1,10 @@
+# This script generates standardized plots for different metrics of pose reproduction
+# Written by: Scotty Laverty
+# Affiliation: Rizzo Lab, Stony Brook University
+# Last Edit Date: 08/2020
+# Last Edit by: Scott Laverty
+
+
 from sys import argv
 import os
 import csv

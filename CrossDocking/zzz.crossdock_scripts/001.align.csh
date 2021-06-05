@@ -1,4 +1,10 @@
 #!/bin/tcsh
+
+# This script will use the mmaker function in Chimera to align all receptors in a family along their backbones
+# Written by: Christopher Corbo
+# Affiliation: Rizzo Lab, Stony Brook University
+# Last Edit Date: 02/2021
+# Last Edit by: Christopher Corbo
 module load chimera/1.13.1
 
 
@@ -6,17 +12,20 @@ set testset = "/gpfs/projects/rizzo/yuchzhou/RCR/DOCK_testset"
 
 set family_list="${LIST_DIR}/family_more_than7.txt"
 
+# Aligns each family one at a time to its respective reference system
 foreach family (`cat $family_list`)
 mkdir ${family}
 cd ${family}
 
 set list = "${LIST_DIR}/${family}.txt"
 
+# All proteins in the family will be aligned to whichever PDB is first in the given list
 set ref  = `head -1 $list`
 
 foreach system (`cat $list`)
 mkdir ${system}
 cd ${system}
+# Chimera commands script to align proteins and apply same transformation to ligands and rewrite the files with new coordinates
 ##############################################
 cat << EOF > chimera.com
 open $testset/$ref/zzz.dock_files/$ref.rec.clean.mol2

@@ -1,6 +1,9 @@
 #!/bin/sh
 
-CROSSDOCK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock" 
+# This script writes all of the dock input files for cartesian minimization and docking for every single pair in a family
+
+WORK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking"
+CROSSDOCK_DIR="${WORK_DIR}/zzz.crossdock" 
 
 cd ${CROSSDOCK_DIR}
 list_of_fam="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/family_more_than7.txt"

@@ -1,5 +1,9 @@
-### This script will determine each crossdocking pairing as incompatible, success, scoring failure or sample failure. The minimization output
-### mol2 is the first arguement and the dock output mol2 is the second argument.
+# This script assesses the outcome of each crossdocking result for a given family. 
+# The minimization output mol2 is the first arguement and the dock output mol2 is the second argument. 
+# Written by: Christopher Corbo
+# Affiliation: Rizzo Lab, Stony Brook University
+# Last Edit Date: 02/2021
+# Last Edit by: Christopher Corbo
 
 import sys
 minfilename = sys.argv[1]                                                                                                                                             
@@ -12,7 +16,7 @@ for min_line in min_lines:
         if "RMSDh" in min_line:
                 RMSDh_min = min_line.split()
                 RMSDh_min_float = float((RMSDh_min[2]))
-
+# If the cartesian minimized molecule moved by more than 2 A RMSD from crystal structure the crossdocking pair is incompatible
 if RMSDh_min_float > 2.0:
 	print("0") #Incompatible
 else:
@@ -31,9 +35,10 @@ else:
 			   RMSDh = line.split()
 			   RMSDh_float = float((RMSDh[2]))
 			   my_list.append(RMSDh_float)
+	   # If the first ranked pose has RMSD less than 2 A its a success
 	   if my_list[0] < 2.0:
 		   print("3") #Success
-
+	   # Otherwise sort the results on RMSD and check the lowest RMSD that was found
 	   else:
 		   my_list.sort()
 		   if my_list[0] < 2.0:

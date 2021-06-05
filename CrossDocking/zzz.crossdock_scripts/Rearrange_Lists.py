@@ -1,9 +1,14 @@
+# This script sorts crossdocking families by the score of each receptor on all of its results (success = 3, score fail = 2, sample fail = 1)
+# Written by: Christopher Corbo
+# Affiliation: Rizzo Lab, Stony Brook University
+# Last Edit Date: 02/2021
+# Last Edit by: Christopher Corbo
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import ListedColormap
 
-
+# Input argument list of PDB code in family
 inputfilename = sys.argv[1]
 filelist = []
 
@@ -36,7 +41,8 @@ num = [0] * N
 mat = megalist
 mat = np.transpose(mat)
 mat = mat.tolist()
-
+# This function sums the score for all results on each receptor by moving the max score to the top row, and then starting the scan on the next lowest row after 
+# each round.
 def Matrix_Resort_Score(mat):
 	for C in range(N):
 		summat = [0]*N
