@@ -1,3 +1,0 @@
-OMP_Decarboxylase
-Phospholipase
-HIV_Protease

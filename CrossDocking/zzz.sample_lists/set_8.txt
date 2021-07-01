@@ -1,4 +1,0 @@
-EGFR
-ABL_Kinase
-Factor_XA
-Estrogen_Receptor

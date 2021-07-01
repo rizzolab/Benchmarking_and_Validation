@@ -1,4 +1,0 @@
-COX
-T4_Lysozyme
-Acetylcholinesterase
-Vitamin_D_Nuclear_Receptor

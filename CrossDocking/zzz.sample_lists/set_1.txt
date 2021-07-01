@@ -1,5 +1,0 @@
-Adenosine_Deaminase
-Streptavidin
-MMP
-HIV_Reverse_Transcriptase
-Thermolysin

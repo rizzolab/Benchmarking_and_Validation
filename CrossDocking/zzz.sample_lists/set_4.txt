@@ -1,5 +1,0 @@
-Ribonuclease_T1
-Thymidylate_Synthase
-PPAR_Kinase
-Beta_Trypsin
-Trypsin

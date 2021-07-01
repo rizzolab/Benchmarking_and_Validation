@@ -1,4 +1,0 @@
-Tryptophan_Synthase
-Hsp_90
-Protein_Tyrosine_Phosphatase
-Carbonic_Anhydrase

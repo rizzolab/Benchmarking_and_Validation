@@ -1,5 +1,0 @@
-Dihydrofolate_Reductase
-CDK
-Phosphodiesterase
-Lysozyme
-Neuraminidase
