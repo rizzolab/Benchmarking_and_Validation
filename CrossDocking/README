@@ -12,13 +12,15 @@ scheme provided if doing so. ***
 Follow the sequence of scripts called here. Wait until each is finished before proceeding to the next.
 
 This step is called in each of the first 3 csh scripts. *** Change the working directory to the appropriate path before running any steps ***
+It seems necessary to explicitly call this script before submitting scripts 001, 002a, 002b
    tcsh
    source 000.source.env.csh
 
 This script will take several hours to run.
    sbatch 001.align.submit.csh
  
-The next step may potentially hit the wall clock. Split the family list in half if need be and submit two jobs.
+Change the testset directory path in this script.
+   Edit "zzz.builds/run.000.set_env_vars.csh" must explicitly set path to the directory of this this script (BUILD_DIR not sourcing correctly)
    sbatch 002a.build.submit.csh
 
 The following script is fast and can be run on the head node.

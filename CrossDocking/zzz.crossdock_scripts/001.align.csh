@@ -8,7 +8,7 @@
 module load chimera/1.13.1
 
 
-set testset = "/gpfs/projects/rizzo/yuchzhou/RCR/DOCK_testset"
+set testset = "/gpfs/projects/rizzo/ccorbo/Building_Stuff/DOCK6_with_ambpdb/SB_2020_testset"
 
 set family_list="${LIST_DIR}/family_more_than7.txt"
 
@@ -28,9 +28,9 @@ cd ${system}
 # Chimera commands script to align proteins and apply same transformation to ligands and rewrite the files with new coordinates
 ##############################################
 cat << EOF > chimera.com
-open $testset/$ref/zzz.dock_files/$ref.rec.clean.mol2
-open $testset/$system/zzz.dock_files/$system.rec.clean.mol2
-open $testset/$system/zzz.dock_files/$system.lig.am1bcc.mol2
+open $testset/$ref/$ref.rec.clean.mol2
+open $testset/$system/$system.rec.clean.mol2
+open $testset/$system/$system.lig.am1bcc.mol2
 mmaker #0 #1 pair ss ss false iter 2.0
 matrixcopy #1 #2 
 write format pdb  1 ${system}.rec.foramber.pdb
