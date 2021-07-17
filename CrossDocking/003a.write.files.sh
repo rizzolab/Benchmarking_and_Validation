@@ -2,11 +2,11 @@
 
 # This script writes all of the dock input files for cartesian minimization and docking for every single pair in a family
 
-WORK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking"
+WORK_DIR="/gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking"
 CROSSDOCK_DIR="${WORK_DIR}/zzz.crossdock" 
 
 cd ${CROSSDOCK_DIR}
-list_of_fam="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/family_more_than7.txt"
+list_of_fam="${WORK_DIR}/zzz.sample_lists/family_more_than7.txt"
 for ref_fam in `cat ${list_of_fam}`; do  ### Open for loop 1
 cd ${ref_fam}
 
@@ -150,9 +150,9 @@ flex_defn_file                                               /gpfs/projects/AMS5
 flex_drive_file                                              /gpfs/projects/AMS536/zzz.programs/dock6.9_release/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.FLX
 write_orientations                                           no
-num_scored_conformers                                        5000
+num_scored_conformers                                        10
 rank_ligands                                                 yes
-max_ranked_ligands                                           5000
+max_ranked_ligands                                           10
 EOF
 
 

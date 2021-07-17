@@ -25,7 +25,7 @@ cp ${BUILD_DIR}/${ref_system}/001.lig-prep/${ref_system}.lig.am1bcc.mol2 ${ref_f
 cp ${BUILD_DIR}/${ref_system}/004.grid/${ref_system}.rec* ${ref_fam}/${ref_system}
 
 else
-echo ${ref_system} >> Inconmplete_Builds.txt
+echo ${ref_system} >> Incomplete_Builds.txt
 
 endif
 

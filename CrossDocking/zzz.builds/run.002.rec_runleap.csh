@@ -18,7 +18,7 @@ set masterdir = "${rootdir}/zzz.master"
 set paramdir  = "${rootdir}/zzz.parameters"
 set scriptdir = "${rootdir}/zzz.scripts"
 set zincdir   = "${rootdir}/zzz.zinclibs"
-set system    = "${VS_SYSTEM}"
+set system    = "${1}"
 set vendor    = "${VS_VENDOR}"
 
 ### Check to see if the ligand file exists

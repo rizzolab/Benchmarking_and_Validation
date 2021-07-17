@@ -12,13 +12,15 @@ if (`hostname -f` == "login1.cm.cluster" || `hostname -f` == "login2.cm.cluster"
 
 ### Source some global variables
 
-setenv WORK_DIR /gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking
+setenv WORK_DIR /gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking
 
 setenv LIST_DIR ${WORK_DIR}/zzz.sample_lists
 
 setenv BUILD_DIR ${WORK_DIR}/zzz.builds
 
 setenv CROSSDOCK_DIR ${WORK_DIR}/zzz.crossdock
+
+setenv SCRIPTS_DIR ${WORK_DIR}/zzz.crossdock_scripts
     echo " Running the CD protocol on the SeaWulf Cluster"
     exit
 

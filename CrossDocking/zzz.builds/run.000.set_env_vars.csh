@@ -24,13 +24,10 @@
     setenv DMSHOMEWORK /gpfs/projects/rizzo/zzz.programs/dms
 
 	### Root directory (the directory where all run.xxx.csh scripts are located)
-	setenv VS_ROOTDIR  ${BUILD_DIR}
+	setenv VS_ROOTDIR /gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking/zzz.builds
 
     ### MPI directory (this is where mpirun is located, compatible with dock6.mpi)
     setenv VS_MPIDIR /gpfs/software/intel/parallel-studio-xe/2018_3/compilers_and_libraries/linux/mpi/intel64
-
-	### System name
-	setenv VS_SYSTEM $1 #example - gp41.outerpocket located in zzz.master
 
 	### Vendor name - library file directory name
 	setenv VS_VENDOR chris #example - cdiv, chbr nt1105 sp100309

@@ -1,6 +1,6 @@
 #!/bin/sh
 # This script will coordinate submitting docking jobs in appropriate directories
-CROSSDOCK_DIR="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.crossdock"
+CROSSDOCK_DIR="/gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking/zzz.crossdock"
 cd ${CROSSDOCK_DIR}
 
 ref_fam="${1}"
@@ -9,7 +9,7 @@ cd ${ref_fam}
 ref_system="${2}"
 cd ${ref_system}
 
-list_of_sys="/gpfs/scratch/ccorbo/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/${ref_fam}.txt"
+list_of_sys="/gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/${ref_fam}.txt"
 for comp_system in `cat ${list_of_sys}`; do
 cd ${comp_system}
 

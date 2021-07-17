@@ -1,9 +1,17 @@
+#!/bin/sh
+#SBATCH --partition=rn-long
+#SBATCH --time=168:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=24
+#SBATCH --job-name=CD_DOCK
+#SBATCH --output=CD_DOCK.out
+
 # This script calls RMSDh_extract.py which gets the RMSD for cartesian minimization and all output poses for each crossdocking pair
 
 module unload anaconda/2
 module load anaconda/3
 
-WORK_DIR="/gpfs/projects/rizzo/ccorbo/Benchmarking_and_Validation/CrossDocking"
+WORK_DIR="/gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking"
 CROSSDOCK_DIR="${WORK_DIR}/zzz.crossdock"
 LIST_DIR="${WORK_DIR}/zzz.sample_lists"
 SCRIPT_DIR="${WORK_DIR}/zzz.crossdock_scripts"
