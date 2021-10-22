@@ -86,7 +86,7 @@ cluster_rmsd_threshold                                       2.0
 rank_ligands                                                 no
 EOF
 
-/gpfs/software/intel/parallel-studio-xe/2018_3/compilers_and_libraries/linux/mpi/intel64/bin/mpirun -np 24 /gpfs/projects/rizzo/zzz.programs/dock6.9_mpiv2018.0.3/bin/dock6.mpi -i FLX_actives_submit.in -o FLX_actives_submit.out
+/gpfs/software/intel/parallel-studio-xe/2018_3/compilers_and_libraries/linux/mpi/intel64/bin/mpirun -np ${3} /gpfs/projects/rizzo/zzz.programs/dock6.9_mpiv2018.0.3/bin/dock6.mpi -i FLX_actives_submit.in -o FLX_actives_submit.out
 
 grep "Grid_Score:" ${system}_actives.FLX_scored.mol2 | awk '{print $3}' | while read line; do
 echo -n ${line} >> Active_score.txt
