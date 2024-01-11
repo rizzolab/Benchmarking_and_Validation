@@ -1,42 +1,18 @@
-Pose Reproduction is a test which will assess the ability of DOCK to reproduce crystallographic protein ligand poses
-
-This series of scripts uses an already built and tested set of protein ligand systems. If you would like to build a different test set or add systems to your
-own version use scripts run.000 - run.004 found in DOCK6_Screening_Protocols 
+Directory Architecture
+  A testset should be prepared with separate subdirectories for each system being tested.
 
 
-##############################
-Step 1: 
-a) If submitting to the queue (recommended) Set the path to the list of PDB codes being used and the testset being used in the script "" submit.sh ""
+Running Pose Reproduction
+  Set all appropriate variables in 001.submit_dock.sh
+    sbatch 001.submit_dock.sh
+    or
+    bash 001.submit_dock.sh
 
-	"" sbatch submit.sh ""
+Analysis
+  Load python3 or anaconda3 module
 
-This will submit the script FLX.sh to the queue. Specify a text file with all PDB codes and the path to the testset directory in the submit script. You may change the partition if you wish to use a different cluster. 
-This takes ~ 1 hour when run on 24 core machine. 
+  python calculate_dock6.results.py $condition_$seed $system_file
+    Insert values from 001.submit_dock.sh for command line arguments. Cat condition and seed (ie Default_0)
 
-b) If running on a local computer
-
-	"" bash FLX.sh clean.systems.all TestsetDirectory ""
-
-In both cases FLX.sh will create a subdirectory for every PDB system within the directory the script is submitted in. 
-The script will automate flexible docking for each system using the standard lab protocols.
-
-##############################
-Step 2:
-Once the prior step has been run in full (if submitted to the queue use the command "" squeue -u username "" to check if it is still running) 
-run the analysis script below. You should have anaconda/3 loaded ( "" module load anaconda/3 ""). Run this script in the original PoseReproduction top directory where
-step 1 scripts were submitted.
-
-	"" python calculate_results.py FLX clean.systems.all Pose_Reproduction ""
-
-This script takes 3 parameters which are specified above. The first parameter is FLX, while the second is the list of all PDB codes. The third parameter is the name of the csv that will be 
-generated and may be changed. This will print Success, Scoring Failure and Sampling Failure statistics to the screen and will also generate a large 
-csv of numerous descriptors.
-
-##############################
-Step 3: This step is not required, but can be used to create preformatted plots and graphs. Once again run it in the same directory as all other scripts have been 
-submitted in.
-
-	"" python Pose_Reproduction_plots.py Pose_Reproduction 1 / 2 / 3 ""
-
-The first input parameter is the name of the csv you chose in the previous step. The second input parameter is either (1, 2 or 3). Only choose a single number. 
-This gives the option of three different plots based on the option you choose.
+Trouble shooting
+  Are compilers for running DOCK loaded?

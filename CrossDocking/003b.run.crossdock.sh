@@ -1,26 +1,29 @@
-#!/bin/sh
-#SBATCH --partition=rn-long
-#SBATCH --time=168:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=24
-#SBATCH --job-name=Set_4
-#SBATCH --output=Set_4.out
+#!/bin/sh 
+#SBATCH --partition=
+#SBATCH --time=
+#SBATCH --nodes=
+#SBATCH --ntasks=
+#SBATCH --job-name=CD_Run
+#SBATCH --output=CD_Run
 
 # This script runs the cartesian minimization and docking set up in the last step. Make sure to specify the set being used in line below.
 
-list_of_fam="/gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/set_4.txt"
+#Where Dock Executable is located (uppermost folder)
+dock_dir=""
+
+list_of_fam=zzz.family_lists/zzz.Families.txt
 for ref_fam in `cat ${list_of_fam}`; do
-echo -n "Running Family: "
-echo ${ref_fam}
-
-list_of_sys="/gpfs/projects/rizzo/ccorbo/Testing_Grounds/Benchmarking_and_Validation/CrossDocking/zzz.sample_lists/${ref_fam}.txt"
-for comp_system in `cat ${list_of_sys}`; do
-
-srun --exclusive -N1 -n1 -W 0 zzz.crossdock_scripts/003.run.crossdock.sh ${ref_fam}  ${comp_system} &
-
-done
-
-wait
-
+  echo -n "Running Family: "
+  echo ${ref_fam}
+  
+  list_of_sys="$LIST_DIR/${ref_fam}.txt"
+  for comp_system in `cat ${list_of_sys}`; do
+  
+   srun --mem=1000 --exclusive -N1 -n1 -W 0 zzz.crossdock_scripts/003.run.crossdock.sh $ref_fam $comp_system $list_of_sys $dock_dir &
+  
+  done
+  
+  wait
+  
 done
 

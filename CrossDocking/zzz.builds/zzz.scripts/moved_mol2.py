@@ -1,12 +1,3 @@
-#!/user/bin/python
-
-#################################################################################################################
-##
-## This libary was writen by Trent Balius and Sudipto Mukherjee in 
-## the Rizzo Research Group at Stony Brook University released in 2012
-## 
-#################################################################################################################
-
 import math, sys
 import os.path
 import cmath
@@ -131,6 +122,7 @@ def read_Mol2_file(file):
              bond_type = linesplit[3]
              temp_bond = bond(a1_num,a2_num,bond_num,bond_type)
              bond_list.append(temp_bond)
+
          elif (flag_substr):
                  ID_heavy_atoms(atom_list)
                  data = Mol(Name,atom_list,bond_list,residue_list)
@@ -141,56 +133,71 @@ def read_Mol2_file(file):
 
     return mol_list
 #################################################################################################################
+# Does not work with grid
+#def write_mol2(molecule,filename):
+#
+#	outmol2 = open(filename,'w')
+#	outmol2.write("@<TRIPOS>MOLECULE\n")      #start the MOLECULE RTI (Record Type Indicator)
+#	outmol2.write(molecule.name+'\n')         #print MOL2FILE name of the molecule
+#	outmol2.write(" %d %d %d 0 0\n" % (len(molecule.atom_list), 
+#		len(molecule.bond_list), len(molecule.residue_list.keys()))) 
+#	# For now, the number of residues is hard-coded to 1. To be fixed.
+#	outmol2.write("SMALL\n") 		  #mol_type
+#	outmol2.write("USER_CHARGES\n") 	  #charge_type
+#
+#	outmol2.write("\n@<TRIPOS>ATOM\n")      #start the ATOM RTI (Record Type Indicator)
+#	for j in range(0,len(molecule.atom_list)):
+#        	outmol2.write("%6d %-4s %9.4f %9.4f %9.4f %-5s %4s %6s %9.4f\n" % 
+#		(j+1, molecule.atom_list[j].name, molecule.atom_list[j].X, molecule.atom_list[j].Y, 
+#		molecule.atom_list[j].Z, molecule.atom_list[j].type, molecule.atom_list[j].resnum, 
+#		molecule.atom_list[j].resname, molecule.atom_list[j].Q))
+#
+#	outmol2.write("@<TRIPOS>BOND\n")
+#	for m in range(0,len(molecule.bond_list)):
+#        	outmol2.write("%7d %5d %-5d %s\n" % (molecule.bond_list[m].num, 
+#		molecule.bond_list[m].a1_num, molecule.bond_list[m].a2_num, molecule.bond_list[m].type))
+#
+#	outmol2.write("@<TRIPOS>SUBSTRUCTURE\n")
+#	for resnum in molecule.residue_list.keys():
+#		outmol2.write("%7d %8s %5d RESIDUE 1 A\n" % (resnum, 
+#		molecule.residue_list[resnum][0].resname, # residue name 
+#		molecule.residue_list[resnum][0].num ))   # atom num of first atom in this residue
+#	outmol2.close()
+#    	return
+#################################################################################################################
+#################################################################################################################
 def write_mol2(molecule,filename):
 
-        # define a dictionary for help renumbering
-        atom_dic = {}
-        resid_dic = {}
-        count = 1
-        for atom in molecule.atom_list:
-            if not atom_dic.has_key(atom.num):
-               atom_dic[atom.num] = count
-               #print atom.num, ",", count,",", atom_dic[atom.num]
-               count=count+1
-        count = 1
+        outmol2 = open(filename,'w')
+        outmol2.write("@<TRIPOS>MOLECULE\n")      #start the MOLECULE RTI (Record Type Indicator)
+        outmol2.write(molecule.name+'\n')         #print MOL2FILE name of the molecule
+        outmol2.write(" %d %d %d 0 0\n" % (len(molecule.atom_list),
+                len(molecule.bond_list), len(molecule.residue_list.keys())))
+        # For now, the number of residues is hard-coded to 1. To be fixed.
+        outmol2.write("SMALL\n")                  #mol_type
+        outmol2.write("USER_CHARGES\n")           #charge_type
+
+        #outmol2.write("\n@<TRIPOS>ATOM\n")      #start the ATOM RTI (Record Type Indicator)
+        outmol2.write("@<TRIPOS>ATOM\n")      #start the ATOM RTI (Record Type Indicator)
+        for j in range(0,len(molecule.atom_list)):
+                outmol2.write("%-5d %-5s %9.4f %9.4f %9.4f %-5s %4s %-6s %8.4f\n" %
+                (j+1, molecule.atom_list[j].name, molecule.atom_list[j].X, molecule.atom_list[j].Y,
+                molecule.atom_list[j].Z, molecule.atom_list[j].type, molecule.atom_list[j].resnum,
+                molecule.atom_list[j].resname, molecule.atom_list[j].Q))
+
+        outmol2.write("@<TRIPOS>BOND\n")
+        for m in range(0,len(molecule.bond_list)):
+                outmol2.write("%-7d %5d %-5d %s\n" % (molecule.bond_list[m].num,
+                molecule.bond_list[m].a1_num, molecule.bond_list[m].a2_num, molecule.bond_list[m].type))
+
+        outmol2.write("@<TRIPOS>SUBSTRUCTURE\n")
         for resnum in molecule.residue_list.keys():
-            resid_dic[resnum] = count
-            count=count+1
-
-	outmol2 = open(filename,'w')
-	outmol2.write("@<TRIPOS>MOLECULE\n")      #start the MOLECULE RTI (Record Type Indicator)
-	outmol2.write(molecule.name+'\n')         #print MOL2FILE name of the molecule
-	outmol2.write("%-5d %-5d %-5d 0     0\n" % (len(molecule.atom_list), 
-		len(molecule.bond_list), len(molecule.residue_list.keys()))) 
-	# For now, the number of residues is hard-coded to 1. To be fixed.
-	outmol2.write("SMALL\n") 		  #mol_type
-	outmol2.write("USER_CHARGES\n") 	  #charge_type
-
-	outmol2.write("@<TRIPOS>ATOM\n")      #start the ATOM RTI (Record Type Indicator)
-	for j in range(0,len(molecule.atom_list)):
-                #print atom_dic[molecule.atom_list[j].num], molecule.atom_list[j].num
-        	outmol2.write("%-6d %-4s %9.4f %9.4f %9.4f %-5s %4s %6s %9.4f\n" % 
-		(atom_dic[molecule.atom_list[j].num], molecule.atom_list[j].name, molecule.atom_list[j].X, molecule.atom_list[j].Y, 
-		molecule.atom_list[j].Z, molecule.atom_list[j].type, resid_dic[molecule.atom_list[j].resnum], 
-		molecule.atom_list[j].resname, molecule.atom_list[j].Q))
-
-	outmol2.write("@<TRIPOS>BOND\n")
-        count = 1
-	for m in range(0,len(molecule.bond_list)):
-        	outmol2.write("%-5d %-5d %-5d %s\n" % (count, 
-		atom_dic[molecule.bond_list[m].a1_num], atom_dic[molecule.bond_list[m].a2_num], molecule.bond_list[m].type))
-                count = count + 1
-
-	outmol2.write("@<TRIPOS>SUBSTRUCTURE\n")
-        count = 1
-	for resnum in molecule.residue_list.keys():
-		#outmol2.write("%-3d %-5s %-5d RESIDUE    1   A     %-5s 1\n" % (resnum, 
-		outmol2.write("%-3d %-5s %-5d RESIDUE    1   A     %-5s 1\n" % (resid_dic[resnum], 
-		molecule.residue_list[resnum][0].resname, # residue name 
-		atom_dic[molecule.residue_list[resnum][0].num], molecule.residue_list[resnum][0].resname[0:3]))   # atom num of first atom in this residue
-                count = count + 1
-	outmol2.close()
-    	return
+                outmol2.write("%-7d %8s %5d RESIDUE 1 A %3s 1\n" % (resnum,
+                molecule.residue_list[resnum][0].resname, # residue name
+                molecule.residue_list[resnum][0].num,   # atom num of first atom in this residue
+                molecule.residue_list[resnum][0].resname[0:3] )) # residue
+        outmol2.close()
+        return
 #################################################################################################################
 def get_pdbcode_list(filename):
     systems_list = open(file,'r')
@@ -204,18 +211,12 @@ def ID_heavy_atoms(atom_list):
     return atom_list
 #################################################################################################################
 #################################################################################################################
-#def distance2(vector1,vector2):
-#        if (len(vector1)!=len(vector2)):
-#                print 'function distance(): vectors differ in length'
-#                sys.exit(1)
-#        distance2 = 0
-#        for i in range(len(vector1)):
-#                distance2 += (vector1[i]-vector2[i])**2
-#        return distance2
-
-def distance2(atom1,atom2):
-    return (atom1.X - atom2.X )**2 + (atom1.Y - atom2.Y )**2 + (atom1.Z - atom2.Z )**2
-
+def distance2(vector1,vector2):
+        distance2 = 0
+        distance2 += (vector1.X-vector2.X)**2
+        distance2 += (vector1.Y-vector2.Y)**2
+        distance2 += (vector1.Z-vector2.Z)**2
+        return distance2
 #################################################################################################################
 #################################################################################################################
 def norm(vector1):
@@ -238,7 +239,6 @@ def heavy_atom_RMSD(ref,pose):
            num_hvy_atoms+=1
     return sqrt(sum/num_hvy_atoms)
 
-#################################################################################################################
 #################################################################################################################
 def formal_charge(molecule):
         total = 0
@@ -341,6 +341,7 @@ def remove_hydrogens(m):
     # Assuming that residue list does not change
 
     data = Mol(m.name,atom_list,bond_list,m.residue_list)
+    ID_heavy_atoms(data.atom_list);
     return data
 #################################################################################################################
 

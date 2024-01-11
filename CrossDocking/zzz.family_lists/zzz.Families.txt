@@ -1,0 +1,11 @@
+Acetylcholinesterase
+Carbonic_Anhydrase_II
+Dopamine_Receptor_D3
+EGFR
+Estrogen_Receptor_alpha
+Glutamate_AMPA
+HIV_Protease
+HIV_Reverse_Transcriptase
+HMG_CoA_Reductase
+Hsp_90
+Phosphodiesterase_5a

@@ -25,7 +25,7 @@ for line in lines:
 megalist = []
 for i in range(len(filelist)): # This loop specifies which list is being read
    datalist = []
-   filename = (filelist[i] + ".outcome.txt")
+   filename = (filelist[i] + ".outcomem.txt")
    with open(filename) as file_object:
       lines = file_object.readlines()
    for line in lines:

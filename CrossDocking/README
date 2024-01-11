@@ -1,49 +1,32 @@
-This is where the Rizzo lab crossdocking protocols and anaylsis scripts are contained.
+Running Cross Docking
+  source 000.source.env.sh 
+  
+  sbatch 001.align.submit.sh
+  
+  module load dock compilers and anaconda/2
+  sbatch 002a.build.submit.sh 
+  
+  sbatch 002b.transfer.sh 
+  
+  bash 003a.write.files.sh 
 
-You will need text files for:
-- A list of crossdocking family names.
-- A text file titled for each family name containing the list of PDB codes in that family. (The first in the list will be used as the reference ...
-it may be wise to use the receptor with the most residues or highest resolution as the reference at your discrepency)
-An example of these lists (which are also the most up to date for those used in the Rizzo lab) is in the directory "" zzz.sample_lists ""
+  Fill in parameter for dock directory in 003b.run.crossdock.sh 
+  sbatch 003b.run.crossdock.sh  
 
-*** IF YOU ARE CONSTRUCTING YOUR OWN SETS OF FAMILIES DELETE EVERYTHING FROM zzz.sample_lists before creating your own lists. Use the same naming 
-scheme provided if doing so. ***
+  module unload anaconda/2 
+  module load anaconda/3
+  bash 004.results.sh 
 
-Follow the sequence of scripts called here. Wait until each is finished before proceeding to the next.
+  bash 005.sort.lists.sh 
 
-This step is called in each of the first 3 csh scripts. *** Change the working directory to the appropriate path before running any steps ***
-It seems necessary to explicitly call this script before submitting scripts 001, 002a, 002b
-   tcsh
-   source 000.source.env.csh
+  bash 006.rerun.results_h.sh 
 
-This script will take several hours to run.
-   sbatch 001.align.submit.csh
+  bash 007.make.heatmaps.sh 
  
-Change the testset directory path in this script.
-   Edit "zzz.builds/run.000.set_env_vars.csh" must explicitly set path to the directory of this this script (BUILD_DIR not sourcing correctly)
-   sbatch 002a.build.submit.csh
+TroubleShooting
+  If a new login  session need to source 000.source.env.sh each time For running all scripts
 
-The following script is fast and can be run on the head node.
-   bash 002b.transfer.csh
+  You need to have chimera as module which can be loaded. If not 001.align.submit.sh needs to be run locally on 
+  chimera gui
 
-Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
-   bash 003a.write.files.sh
-
-The next step runs the crossdocking. This will hit the wall clock for the entire set of families in the sample provided. For this reason
-it is done in sets of families. They should be placed in zzz.sample_lists/set_N.txt where N is the number of sets. Samples are provided here.
-You need to specify the set being used here and submit this script separately for each set.
-   sbatch 003b.run.crossdock.sh 
-
-Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
-   bash 004.results.sh
-
-Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
-   bash 005.sort.lists.sh
-
-Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
-   bash 006.rerun.results.sh
-
-Change the WORK_DIR variable in the first line of the next script to the current directory. This can be run on the head node.
-   bash 007.make.heatmaps.sh 
-
-
+  002a.build_submit is compatible with python/anaconda 2 but other scripts are python/anaconda 3

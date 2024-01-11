@@ -94,14 +94,10 @@ close (LIGAND);
 $lignatm = $i;
 print "zzz.fix.nonstandard.res.perl: Ligand has $lignatm atoms\n";
 
+#Start Accepted List
 # Identify all non-standard residues, mutate to ALA if far from ligand
-%amino_acids = ('ALA',1,'ARG',2,'ASN',3,'ASP',4,'CYS',5,'GLU',6,
-'GLY',7,'HIS',8,'ILE',9,'LEU',10,'LYS',11,'MET',12,'PHE',13,'PRO',14,
-'SER',15,'THR',16,'TRP',17,'TYR',18,'VAL',19,'GLN',20,'HEM',21,'Y2P',22,'GLH',23,
-'CAL',24,'MAG',25,'ZIN',26,'CHL',27,'POT',28,'HIE',29,'ACE',30,'NME',31,'NHE',32,
-'CA',33,'MG',34,'ZN',35,'HID',36);
-# Y2P = phosphorylated tyrosine
-
+%amino_acids = ('ALA',1,'ARG',2,'ASN',3,'ASP',4,'CYS',5,'GLU',6,'GLY',7,'HIS',8,'ILE',9,'LEU',10,'LYS',11,'MET',12,'PHE',13,'PRO',14,'SER',15,'THR',16,'TRP',17,'TYR',18,'VAL',19,'GLN',20,'HEM',21,'Y2P',22,'GLH',23,'CAL',24,'MAG',25,'ZIN',26,'CHL',27,'POT',28,'HIE',29,'ACE',30,'NME',31,'NHE',32,'CA',33,'MG',34,'ZN',35,'HID',36,'ASH',37,'SOD',38,'MAN',39,'CYX',40,'K',41);
+#Stop Accepted List
 for ($j=0; $j<$recnatm; $j++)
 {
 	next if exists $amino_acids{$rec_resname[$j]};  #ignore standard amino acids
@@ -110,6 +106,7 @@ for ($j=0; $j<$recnatm; $j++)
 	# ATOM    208 SE   MSE B  29       9.409  55.334  13.406 25.24 25.24          SE
 	# ATOM     96  SD  MET A  16      32.985 -34.967  47.036  1.00 59.46           S
 	if ($rec_resname[$j] eq "MSE") {
+ 		print "zzz.fix.nonstandard.res.perl: Converted MSE\n";
 		$lines[$j]=~ s/SE   MSE/ SD  MET/g;
 		$lines[$j]=~ s/MSE/MET/g;
 		next; # do not delete any atoms
@@ -117,6 +114,7 @@ for ($j=0; $j<$recnatm; $j++)
 
 	# Convert CME->MET. Leave CE and SD unchanged. SG->CG. Delete OH and CZ.
 	if ($rec_resname[$j] eq "CME") {
+		print "zzz.fix.nonstandard.res.perl: Converted CME\n";
                 $lines[$j]=~ s/SG  CME/CG  MET/g;
 		$lines[$j]=~ s/ CME / MET /g;
 		$lines[$j]="" if (($rec_atoname[$j] eq "OH")or($rec_atoname[$j] eq "CZ"));
@@ -125,13 +123,24 @@ for ($j=0; $j<$recnatm; $j++)
 
 	# Convert CSD->CYS by deleting two extra oxygens OD1 and OD2 
 	if ($rec_resname[$j] eq "CSD") {
+		print "zzz.fix.nonstandard.res.perl: Converted CSD\n";
 		$lines[$j]=~ s/ CSD / CYS /g;
 		$lines[$j]="" if (($rec_atoname[$j] eq "OD1")or($rec_atoname[$j] eq "OD2"));
 		next; # do not delete any more atoms
 	}
 
+        # Convert CSO->CYS by deleting extra oxygen OD. Added 4/2023
+        if ($rec_resname[$j] eq "CSO") {
+		print "zzz.fix.nonstandard.res.perl: Converted CSO\n";
+                $lines[$j]=~ s/ CSO / CYS /g;
+                $lines[$j]="" if (($rec_atoname[$j] eq "OD"));
+                next; # do not delete any more atoms
+        }
+
+
         # Convert CCS->CYS by just renaming the residue
         if ($rec_resname[$j] eq "CCS") {
+		print "zzz.fix.nonstandard.res.perl: Converted CCS\n";
                 $lines[$j]=~ s/ CCS / CYS /g;
                 next; # do not delete any more atoms
         }
@@ -143,12 +152,23 @@ for ($j=0; $j<$recnatm; $j++)
                 next; # do not delete any more atoms
         }
 
-        # Convert TYS->TYR by just renaming the residue
-        #if ($rec_resname[$j] eq "TYS") {
-        #        $lines[$j]=~ s/ OH  TYR / S   TYR /g;
-        #        $lines[$j]=~ s/ TYS / TYR /g;
-        #        next; # do not delete any more atoms
-        #}
+        # Convert SME->MET. S->SD. Delete OE. Added 4/2023
+        if ($rec_resname[$j] eq "SME") {
+		print "zzz.fix.nonstandard.res.perl: Converted SME\n";
+                $lines[$j]=~ s/S   SME/SD  MET/g;
+                $lines[$j]=~ s/ SME / MET /g;
+                $lines[$j]="" if (($rec_atoname[$j] eq "OE"));
+                next; # do not delete any more atoms
+        }
+
+        # Convert MHO->MET.  Delete OD1. Added 4/2023
+        if ($rec_resname[$j] eq "MHO") {
+		print "zzz.fix.nonstandard.res.perl: Converted MHO\n";
+                $lines[$j]=~ s/ MHO / MET /g;
+                $lines[$j]="" if (($rec_atoname[$j] eq "OD1"));
+                next; # do not delete any more atoms
+        }
+
 
 	# Measure distance from bad residue to ligand
 	$mindist2ligsq = 10000;   # Set min distance is 100A between lig and non-std residue
@@ -160,7 +180,6 @@ for ($j=0; $j<$recnatm; $j++)
 	print "zzz.fix.nonstandard.res.perl: $rec_resname[$j] $rec_resnumb[$j] $rec_atoname[$j] ";
 	printf "%.2f\n", sqrt($mindist2ligsq);
 
-	#next if ($rec_resname[$j] eq "MSE");
 
 	# keep only backbone+CA+CB in non-standard residues
 	# lines can be deleted simply by setting them equal to ""

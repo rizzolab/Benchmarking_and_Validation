@@ -1,0 +1,22 @@
+Directory Architecture
+  A testset should be prepared with separate subdirectories for each system being tested.
+
+  Each subdirectory should have appropriate files for docking that system (actives and decoys in separate multi- mol2) 
+	-Names should be actives_final.mol2 and decoys_final.mol2
+
+Running Database Enrichment
+  It is highly recommended to run this in parallel. DOCK takes on average 90 seconds to dock a single molecule on a single core.
+
+  Set all appropriate variables in 001.submit_dock.sh 
+    sbatch 001.submit_dock.sh  
+    or 
+    bash 001.submit_dock.sh 
+
+Analysis
+  Set variables in 002.analysis.sh
+  Load python3 or anaconda3 module
+    bash 002.analysis.sh
+
+Trouble Shooting
+  These scripts assume the string "MOLECULE" occurs once per individual molecule in multi-mol2
+  If this is not the case - replace MOLE with other appropriate string in scripts
