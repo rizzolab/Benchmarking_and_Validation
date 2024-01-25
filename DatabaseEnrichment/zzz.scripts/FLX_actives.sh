@@ -64,9 +64,9 @@ simplex_grow_tors_premin_iterations                          0
 simplex_random_seed                                          0
 simplex_restraint_min                                        no
 atom_model                                                   all
-vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/vdw_AMBER_parm99.defn 
-flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex.defn
-flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex_drive.tbl
+vdw_defn_file                                                ${dock_dir}/parameters/vdw_AMBER_parm99.defn 
+flex_defn_file                                               ${dock_dir}/parameters/flex.defn
+flex_drive_file                                              ${dock_dir}/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${system}_actives.FLX
 write_orientations                                           no
 write_conformations                                          no
