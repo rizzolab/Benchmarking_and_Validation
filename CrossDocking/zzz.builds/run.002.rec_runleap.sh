@@ -210,7 +210,7 @@ loadamberparams y2p.frcmod
 loadamberparams gaff_cz_mass_fix.frcmod
 PRO = loadpdb pro.noH.pdb
 EOF
-#cat ssbonds.txt >> com.leap.in
+cat ssbonds.txt >> com.leap.in
 cat  >> com.leap.in<<EOF
 loadamberparams ${system}.lig.ante.frcmod
 LIG = loadmol2 ${system}.lig.ante.mol2
