@@ -154,7 +154,7 @@ def main():
          #print sys, "sampling"
          if ( out_grid == 0):
 	     unfinished += 1
-             #print sys
+             print sys, "Incomplete Docking"
      #out_heuc = outcome_fp(sys+"/half_euclidean_scored.mol2")
      #if (out_heuc == 1):
      #    heuc_suc += 1
