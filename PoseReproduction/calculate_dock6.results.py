@@ -25,8 +25,8 @@ def outcome_grid(input):
 #        print 'DockSuccess'
         return 1
     ###Only take top 20 poses here to copy vina
-    tmp_list=RMSDarray[:20] 
-    RMSDarray=tmp_list
+    #tmp_list=RMSDarray[:20] 
+    #RMSDarray=tmp_list
 
     RMSDarray.sort()
     if RMSDarray[0] <= 2.0: 
