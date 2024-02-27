@@ -1,4 +1,6 @@
-This is where the Rizzo Lab protocols are outlined with input scripts and analysis files for 4 standard docking benchmarking tests.
+This set of scripts should be preserved on the github.
+
+If a new set of scripts is created, it should be separate and with a new versionnumber.
 
 The tutorials associated with these scripts can be found at:
 https://ringo.ams.stonybrook.edu/index.php/Tutorials
