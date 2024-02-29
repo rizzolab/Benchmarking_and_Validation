@@ -141,9 +141,12 @@ flex_defn_file                                               /gpfs/projects/rizz
 flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.FLX
 write_orientations                                           no
-num_scored_conformers                                        1000
-write_conformations                                          no
-rank_ligands                                                 no
+num_scored_conformers                                        20
+write_conformations                                          yes
+cluster_conformations                                        yes
+cluster_rmsd_threshold                                       2.0
+rank_ligands                                                 yes
+max_ranked_ligands                                           20
 EOF
 
 

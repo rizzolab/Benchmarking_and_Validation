@@ -21,7 +21,7 @@ list_of_sys2="${LIST_DIR}/${ref_fam}.txt"
 for comp_system in `cat ${list_of_sys2}`; do
 cd ${comp_system}
 
-python ${SCRIPTS_DIR}/RMSDh_extract.py ${comp_system}_${ref_system}.min_scored.mol2 ${comp_system}_${ref_system}.FLX_scored.mol2  > ${comp_system}_${ref_system}.outcomeh.txt
+python ${SCRIPTS_DIR}/RMSDh_extract.py ${comp_system}_${ref_system}.min_scored.mol2 ${comp_system}_${ref_system}.FLX_ranked.mol2  > ${comp_system}_${ref_system}.outcomeh.txt
 
 echo  "$(<${comp_system}_${ref_system}.outcomeh.txt )"  >> ../../${ref_system}.outcomeh.txt
 
