@@ -26,7 +26,7 @@ list_of_fam=${LIST_DIR}/zzz.Families.txt
 cd ${BUILD_DIR}
 
 for family in `cat ${list_of_fam}`;do 
-  srun  --exclusive -N1 -n1 bash ../zzz.crossdock_scripts/002.build.sh ${family} &
+  srun --mem=1000 --exclusive -N1 -n1 bash ../zzz.crossdock_scripts/002.build.sh ${family} &
 done
 
 wait
