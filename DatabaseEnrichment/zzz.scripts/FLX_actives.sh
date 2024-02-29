@@ -26,7 +26,7 @@ write_growth_tree                                            no
 use_internal_energy                                          yes
 internal_energy_rep_exp                                      12
 internal_energy_cutoff                                       100.0
-ligand_atom_file                                             ${system_dir}/${system}/${subset}_final.mol2
+ligand_atom_file                                             ${system_dir}/zzz.DUDE_Files/${system}/actives_final.mol2
 limit_max_ligands                                            no
 skip_molecule                                                no
 read_mol_solvation                                           no
