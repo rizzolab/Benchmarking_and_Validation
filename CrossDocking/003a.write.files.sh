@@ -142,11 +142,9 @@ flex_drive_file                                              /gpfs/projects/rizz
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.FLX
 write_orientations                                           no
 num_scored_conformers                                        20
-write_conformations                                          yes
-cluster_conformations                                        yes
-cluster_rmsd_threshold                                       2.0
-rank_ligands                                                 yes
-max_ranked_ligands                                           20
+write_conformations                                          no
+cluster_conformations                                        no
+rank_ligands                                                 no
 EOF
 
 
