@@ -84,7 +84,7 @@ fi
 
 grep "Grid_Score:" ${system}_decoys.FLX_scored.mol2 | awk '{print $3}' | while read line; do
 echo -n ${line} >> Decoy_score.txt
-echo " Active" >> Decoy_score.txt
+echo " Decoy" >> Decoy_score.txt
 done
 
 cd ../
