@@ -11,9 +11,9 @@ cd ${system}
 
 rm All_score_complt_sort_1*.txt
 
-act_count=`grep MOLE $testset/$system/actives_final.mol2  |wc -l`
+act_count=`grep MOLE $testset/zzz.DUDE_Files/$system/actives_final.mol2  |wc -l`
 
-dec_count=`grep MOLE $testset/$system/decoys_final.mol2  |wc -l`
+dec_count=`grep MOLE $testset/zzz.DUDE_Files/$system/decoys_final.mol2  |wc -l`
 
 echo  ${system} " " >> ../Statistics.txt
 
