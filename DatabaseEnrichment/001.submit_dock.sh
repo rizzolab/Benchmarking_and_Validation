@@ -32,9 +32,9 @@ for system in `cat ${system_file}`; do
  ./zzz.scripts/FLX_actives.sh ${system} ${testset} ${dock} ${mpi} ${processes}
  ./zzz.scripts/FLX_decoys.sh ${system} ${testset} ${dock} ${mpi} ${processes}
 
- cat ./${system}/Active_score.txt >> ./${system}/All_score.txt
+ cat ./${system}/Active_score.txt > ./${system}/All_score.txt
  cat ./${system}/Decoy_score.txt >> ./${system}/All_score.txt
- sort -n ./${system}/All_score.txt >> ./${system}/All_score_sort.txt
+ sort -n ./${system}/All_score.txt > ./${system}/All_score_sort.txt
  echo ${system} " has finished processing" >> DUDE_Docked_Log.txt
 done
 
