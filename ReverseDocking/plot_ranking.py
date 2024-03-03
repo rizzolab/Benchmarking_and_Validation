@@ -1,3 +1,4 @@
+#This creates a plot of ranking output per system on 3 different metrics (cognate, protein pair match, and protein class match)
 import matplotlib
 import matplotlib.mlab as mlab
 import numpy as np
