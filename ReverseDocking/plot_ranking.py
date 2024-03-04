@@ -21,11 +21,6 @@ with open("zzy.cognate_rec_rank_w_pairs_sort.dat","r") as filereader:
 		linesplit=linestrip.split()
 		rank_pairs.append(float(linesplit[1]))
 
-with open("zzy.cognate_rec_rank_w_class_pairs.dat","r") as filereader:
-	for line in filereader:
-		linestrip=line.rstrip()
-		linesplit=linestrip.split()
-		rank_class_pairs.append(float(linesplit[1]))
 
 
 for i in range(len(rank)):
@@ -34,7 +29,6 @@ for i in range(len(rank)):
 fig, ax = plt.subplots()
 ax.plot(x, rank, color='purple', alpha=1.00)
 ax.plot(x, rank_pairs, color='purple', alpha=1.00,linestyle="dashed",linewidth=1.7)
-ax.plot(x, rank_class_pairs, color='purple', alpha=1.00,linestyle="dashed",linewidth=1.7)
 ax.fill_between(x, rank, 0, color='fuchsia', alpha=.1)
 
 plt.xlim([1,165])
