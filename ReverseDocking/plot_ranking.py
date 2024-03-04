@@ -9,19 +9,19 @@ rank_pairs=[]
 rank_class_pairs=[]
 x=[]
 
-with open("dock6.cognate_rec_rank_sort.dat","r") as filereader:
+with open("zzy.cognate_rec_rank_sort.dat","r") as filereader:
 	for line in filereader:
 		linestrip=line.rstrip()
 		linesplit=linestrip.split()
 		rank.append(float(linesplit[1]))
 
-with open("dock6.cognate_rec_rank_w_pairs_sort.dat","r") as filereader:
+with open("zzy.cognate_rec_rank_w_pairs_sort.dat","r") as filereader:
 	for line in filereader:
 		linestrip=line.rstrip()
 		linesplit=linestrip.split()
 		rank_pairs.append(float(linesplit[1]))
 
-with open("dock6.cognate_rec_rank_w_class_pairs.dat","r") as filereader:
+with open("zzy.cognate_rec_rank_w_class_pairs.dat","r") as filereader:
 	for line in filereader:
 		linestrip=line.rstrip()
 		linesplit=linestrip.split()
