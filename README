@@ -6,3 +6,5 @@ The tutorials associated with these scripts can be found at:
 https://ringo.ams.stonybrook.edu/index.php/Benchmarking_Lab_SOPs
 
 Choose the tutorial version which matches the set of scripts used.
+
+NOTE: While Testset construction and Benchmarking tutorials are on same page on wiki, these repositories are deliberately kept separate, as it is not always necessary to run both testset construction in pair with Benchmarking
