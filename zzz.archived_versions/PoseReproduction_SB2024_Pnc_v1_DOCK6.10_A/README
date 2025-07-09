@@ -1,0 +1,18 @@
+Directory Architecture
+  A testset should be prepared with separate subdirectories for each system being tested.
+
+
+Running Pose Reproduction
+  Set all appropriate variables in 001.submit_dock.sh
+    sbatch 001.submit_dock.sh
+    or
+    bash 001.submit_dock.sh
+
+Analysis
+  Load python3 or anaconda3 module
+
+  python calculate_dock6.results.py $condition_$seed $system_file
+    Insert values from 001.submit_dock.sh for command line arguments. Cat condition and seed (ie Default_0)
+
+Trouble shooting
+  Are compilers for running DOCK loaded?
