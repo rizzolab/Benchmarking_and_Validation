@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --partition=long-28core
+#SBATCH --partition=rn-long-40core
 #SBATCH --time=12:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=28
@@ -13,7 +13,7 @@ val=`grep Grid_Score ${lig_sys}_${sys}_0_scored.mol2| head -n1`
 echo $sys " " $val >> tmp_scores_propairs.txt
 done
 
-pairs=`grep $lig_sys ../../FARMA_pairs.dat `
+pairs=`grep $lig_sys ../FARMA_pairs.dat `
 best_pair=`for pair in echo $pairs;do grep $pair tmp_scores_propairs.txt ;done | sort -n -k4 | head -n1 | awk '{print $1}'`
 
 rank=`sort -n -k4  tmp_scores_propairs.txt| grep -n $best_pair | awk -F ':' '{print $1}'`

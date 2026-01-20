@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --partition=long-28core
+#SBATCH --partition=rn-long-40core
 #SBATCH --time=12:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=20
