@@ -1,0 +1,32 @@
+Running Cross Docking
+  source 000.source.env.sh 
+  
+  sbatch 001.align.submit.sh
+  
+  module load dock compilers and anaconda/2
+  sbatch 002a.build.submit.sh 
+  
+  sbatch 002b.transfer.sh 
+  
+  bash 003a.write.files.sh 
+
+  Fill in parameter for dock directory in 003b.run.crossdock.sh 
+  sbatch 003b.run.crossdock.sh  
+
+  module unload anaconda/2 
+  module load anaconda/3
+  bash 004.results.sh 
+
+  bash 005.sort.lists.sh 
+
+  bash 006.rerun.results_h.sh 
+
+  bash 007.make.heatmaps.sh 
+ 
+TroubleShooting
+  If a new login  session need to source 000.source.env.sh each time For running all scripts
+
+  You need to have chimera as module which can be loaded. If not 001.align.submit.sh needs to be run locally on 
+  chimera gui
+
+  002a.build_submit is compatible with python/anaconda 2 but other scripts are python/anaconda 3
