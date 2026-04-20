@@ -1,22 +1,22 @@
 #!/bin/sh 
-#SBATCH --partition=rn-long-40core
+#SBATCH --partition=
 #SBATCH --time=10:00:00
-#SBATCH --nodes=9
-#SBATCH --ntasks=40
-#SBATCH --job-name=PoseReproduction2
-#SBATCH --output=PoseReproduction2.out
+#SBATCH --nodes=
+#SBATCH --ntasks=
+#SBATCH --job-name=PoseReproduction(SeedNumber)
+#SBATCH --output=PoseReproduction(SeedNumber).out
 
-# Set the appropriate path for the two following variables
+# Load compilers for DOCK
 module load gcc-stack
 
-# Path to prepared testset files
-testset="/gpfs/projects/rizzo/zzz.testsets/SB2025_Pnc_v2/zzz.distribution"
+# Global Path to prepared testset files
+testset="YOURPATH/SB2025_v1_DOCK6_full"
 
 # List of PDB Codes with prepared files
-system_file="/gpfs/projects/rizzo/zzz.testsets/SB2025_Pnc_v2/zzz.lists/clean.systems.all"
+system_file="clean.systems.all"
 
 #Path to dock executable upper most folder (dont include bin)
-dock_dir=/gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12
+dock_dir="YOURPATH/dock6.12"
 
 #Experiment Name 
 #If running Pose Reproduction under multiple conditions give differing names for each experiment here
@@ -25,7 +25,7 @@ conditions="Default"
 
 
 #If wanting to change seed, be aware "0" and "1" lead to identical behavior
-seed="2"
+seed="0"
 
 #srun uses all of the cores available to run the docking in parallel
 for system in `cat ${system_file}`; do

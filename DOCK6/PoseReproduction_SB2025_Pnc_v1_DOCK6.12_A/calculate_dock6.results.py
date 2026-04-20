@@ -10,8 +10,8 @@ def outcome_grid(input):
     if (not os.path.isfile(input)):
         return 0
     if (os.path.getsize(input) == 0):
-#        print input + " is empty."
-#        print 'Did not finish'
+#        print(input + " is empty.")
+#        print("Did not finish")
         return 0
     file = open(input, 'r')
     lines = file.readlines()
@@ -22,7 +22,7 @@ def outcome_grid(input):
            if splitline[1] == "HA_RMSDh:":
               RMSDarray.append(float(splitline[2]))
     if RMSDarray[0] <= 2.0: # DOCK success
-#        print 'DockSuccess'
+#        print("Success")
         return 1
     ###Only take top 20 poses here to copy vina
     #tmp_list=RMSDarray[:20] 
@@ -30,10 +30,10 @@ def outcome_grid(input):
 
     RMSDarray.sort()
     if RMSDarray[0] <= 2.0: 
-#        print 'scoringFailure'
+#        print("scoringFailure")'
         return 2
    
-#    print 'samplingFailure'
+#    print("samplingFailure")
     return 3
 
 ###################################################################################################################
@@ -42,8 +42,8 @@ def outcome_grid(input):
 
 def outcome_dce(input):
     if (os.path.getsize(input) == 0):
-#        print input + " is empty."
-#        print 'Did not finish'
+#        print(input + " is empty.")
+#        print("Did not finish")
         return 0
     file = open(input, 'r')
     lines = file.readlines()
@@ -74,8 +74,8 @@ def outcome_dce(input):
 
 def outcome_fp(input):
     if (os.path.getsize(input) == 0):
-#        print input + " is empty."
-#        print 'Did not finish'
+#        print(input + " is empty.")
+#        print("Did not finish")
         return 0
     file = open(input, 'r')
     lines = file.readlines()
@@ -116,7 +116,7 @@ def main():
  sampling = 0
  unfinished = 0
  if len(argv) !=3:
-    print argv[0], "[FLX/RGD/FAD] ListFile"
+    print(argv[0], "[FLX/RGD/FAD] ListFile")
     exit()
  function = argv[1]
  listFile = argv[2]
@@ -128,9 +128,9 @@ def main():
  systemsFile.close()
 # print N
 
- success_file=open("%s.dock6.SB2012.success.%s.dat" % (str(datetime.date.today()),function), "w")
- scoring_failure_file=open("%s.dock6.SB2012.scoring_failure.%s.dat" % (str(datetime.date.today()),function), "w")
- sampling_failure_file=open("%s.dock6.SB2012.sampling_failure.%s.dat" % (str(datetime.date.today()),function), "w")
+ success_file=open("%s.dock6.SB2025.success.%s.dat" % (str(datetime.date.today()),function), "w")
+ scoring_failure_file=open("%s.dock6.SB2025.scoring_failure.%s.dat" % (str(datetime.date.today()),function), "w")
+ sampling_failure_file=open("%s.dock6.SB2025.sampling_failure.%s.dat" % (str(datetime.date.today()),function), "w")
 
 
  for sys in systems:
@@ -152,9 +152,9 @@ def main():
          sampling += 1
          sampling_failure_file.write("%s\n" % sys)
          #print sys, "sampling"
-         if ( out_grid == 0):
-	     unfinished += 1
-             print sys, "Incomplete Docking"
+     if ( out_grid == 0):
+         unfinished += 1
+         print(sys + " Incomplete Docking")
      #out_heuc = outcome_fp(sys+"/half_euclidean_scored.mol2")
      #if (out_heuc == 1):
      #    heuc_suc += 1
@@ -167,11 +167,11 @@ def main():
  scoring_failure_file.close()
  sampling_failure_file.close()
 
- print len(systems), "Systems"
- print "Success", dock_suc, (dock_suc / float(len(systems)))*100
- print "Scoring", scoring, (scoring / float(len(systems)))*100
- print "Sampling", sampling, (sampling / float(len(systems)))*100
- print "Unfinished", unfinished, (unfinished / float(len(systems)))*100
+ print(str(len(systems)) + " Systems")
+ print( "Success " + str(dock_suc) + " " + str((dock_suc / float(len(systems)))*100))
+ print( "Scoring " + str(scoring) + " " + str((scoring / float(len(systems)))*100))
+ print( "Sampling " + str(sampling) + " " +  str((sampling / float(len(systems)))*100))
+ print( "Unfinished " + str(unfinished) + " " + str((unfinished / float(len(systems)))*100))
 
 ###########################################
 main()
