@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # This script writes all of the dock input files for cartesian minimization and docking for every single pair in a family
-
 cd ${CROSSDOCK_DIR}
+
+
 list_of_fam="${WORK_DIR}/zzz.family_lists/zzz.Families.txt"
 for ref_fam in `cat ${list_of_fam}`; do  ### Open for loop 1
 
@@ -59,9 +60,9 @@ simplex_random_seed                                          0
 simplex_restraint_min                                        yes
 simplex_coefficient_restraint                                10.0
 atom_model                                                   all
-vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/vdw_AMBER_parm99.defn
-flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex.defn
-flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex_drive.tbl
+vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/vdw_AMBER_parm99.defn
+flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex.defn
+flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.min
 write_mol_solvation                                          no
 write_orientations                                           no
@@ -132,9 +133,9 @@ simplex_grow_tors_premin_iterations                          0
 simplex_random_seed                                          0
 simplex_restraint_min                                        no
 atom_model                                                   all
-vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/vdw_AMBER_parm99.defn 
-flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex.defn
-flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.10_mpi/parameters/flex_drive.tbl
+vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/vdw_AMBER_parm99.defn 
+flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex.defn
+flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.FLX
 write_mol_solvation                                          no
 write_orientations                                           no
@@ -153,3 +154,14 @@ cd ../
 done
 cd ../
 done
+
+if [ "$prepped_set" = "yes" ];then
+ family_list="${LIST_DIR}/zzz.Families.txt"
+ for ref_fam in `cat $family_list`; do
+   ref_list="${LIST_DIR}/${ref_fam}.txt"
+   for  ref_system  in  `cat $ref_list`; do
+     cp ${TESTSET_DIR}/${ref_fam}/${ref_system}.lig.am1bcc.mol2 $ref_fam/${ref_system}
+     cp ${TESTSET_DIR}/${ref_fam}/${ref_system}.rec* $ref_fam/${ref_system}
+   done
+ done
+fi

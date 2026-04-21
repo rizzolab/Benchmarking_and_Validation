@@ -6,6 +6,11 @@
 #SBATCH --job-name=CD_Align
 #SBATCH --output=CD_Align
 
+if [ "$prepped_set" != "yes" ];then
+   echo "Step not necessary for downloaded testset"
+   exit
+fi
+
 # This script calls 001.align.sh which aligns crossdocking families to a reference in the family
 # The reference will be the first pdb in each respective family list in zzz.family_lists
 

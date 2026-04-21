@@ -9,6 +9,11 @@
 # This script calls will construct sphere and grid dock files for all of the systems that were aligned on the previous step
 #source 000.source.env.sh
 
+if [ "$prepped_set" != "yes" ];then
+   echo "Step not necessary for downloaded testset"
+   exit
+fi
+
 ### DOCK home directory
 export DOCKHOMEWORK="/gpfs/projects/rizzo/zzz.programs/dock6.9_mpiv2018.0.3"
 

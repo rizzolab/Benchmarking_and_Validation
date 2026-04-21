@@ -6,6 +6,11 @@
 #SBATCH --job-name=CD_Trans
 #SBATCH --output=CD_Trans
 
+if [ "$prepped_set" != "yes" ];then
+   echo "Step not necessary for downloaded testset"
+   exit
+fi
+
 cd ${CROSSDOCK_DIR}
 family_list="${LIST_DIR}/zzz.Families.txt"
 for ref_fam in `cat $family_list`; do
