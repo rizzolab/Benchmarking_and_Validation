@@ -25,9 +25,9 @@ orient_ligand                                                no
 bump_filter                                                  no
 score_molecules                                              no
 atom_model                                                   united
-vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/vdw_AMBER_parm99.defn
-flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex.defn
-flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex_drive.tbl
+vdw_defn_file                                                $dock6_dir/parameters/vdw_AMBER_parm99.defn
+flex_defn_file                                               $dock6_dir/parameters/flex.defn
+flex_drive_file                                              $dock6_dir/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${sys}.${conditions}.dockingRMSD
 write_mol_solvation                                          no
 write_orientations                                           no
@@ -38,7 +38,7 @@ score_threshold                                              99999
 rank_ligands                                                 no
 EOF
 
-/gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/bin/dock6 -i rescore.in -o rescore.out
+$dock6_dir/bin/dock6 -i rescore.in -o rescore.out
 
 grep "HA_RMSDh:"  ${sys}.${conditions}.dockingRMSD_scored.mol2 | awk '{print $3}' >> RMSDh_grep.txt
 

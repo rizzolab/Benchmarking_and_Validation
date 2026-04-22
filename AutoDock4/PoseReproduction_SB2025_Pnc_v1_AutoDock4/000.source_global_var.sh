@@ -11,3 +11,6 @@ export seed=3
 #If running Pose Reproduction under multiple conditions give differing names for each experiment here
 # to keep track of separate experiments
 export conditions="Default_${seed}_${seed}"
+
+#Set path to dock6 compilation
+export dock6_dir="YOURPATH"

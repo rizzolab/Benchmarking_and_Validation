@@ -9,10 +9,10 @@ Change Job name and Output name before running below step if running in slurm
 It can also be run in serial by commenting out parallel lines and uncommenting bottom section
    bash 001.submit_dock.sh
 
-Then openbabel is contingency for next step, but other conversion programs, such as chimera can potentially work:
    bash 002.index_lowest_scr.sh
 
-   bash 003.atom_type_matcher.sh
+Then openbabel is contingency for next step, but other conversion programs, such as chimera can potentially work:
+   bash 003.pdbqt_to_mol2.sh
 
 Then the pose RMSD is calculated via DOCK6
    bash 004.dock6_RMSDh.sh
