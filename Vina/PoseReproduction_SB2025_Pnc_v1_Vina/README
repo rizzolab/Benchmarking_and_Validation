@@ -13,4 +13,7 @@ openbabel is contingency for next step, but other conversion programs, such as c
    bash  002.pdbqt_to_mol2.sh
 
 Then the pose RMSD is calculated via DOCK6
-   bash  004.dock6_RMSDh.sh
+   bash  003.dock6_RMSDh.sh
+
+Finally for testset PR statistics
+   bash  004.calc_outcome.sh
