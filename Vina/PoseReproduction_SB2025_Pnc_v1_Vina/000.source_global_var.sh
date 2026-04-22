@@ -1,11 +1,11 @@
 # Path to prepared testset files
-export testset="/gpfs/scratch/ccorbo/ScriptTesting/zzz.SB2025_AutoDock_Distribution"
+export testset="YOURPATH/zzz.SB2025_AutoDock_Distribution"
 
 #list of systems for docking
-export system_file="test.systems "
+export system_file="clean.systems.all "
 
 #Set a random seed
-export seed=3
+export seed=1
 
 #Experiment Name 
 #If running Pose Reproduction under multiple conditions give differing names for each experiment here
