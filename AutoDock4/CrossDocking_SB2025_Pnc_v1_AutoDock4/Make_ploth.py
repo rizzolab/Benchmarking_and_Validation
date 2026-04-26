@@ -11,9 +11,9 @@ from matplotlib.colors import ListedColormap
 
 
 inputfilename = sys.argv[1]
+filelist = []
 family = sys.argv[2]
 print(family)
-filelist = []
 
 #This will read a list of the actual lists containing data's names which will be used to call these individual files
 file_name = 'inputfilename'
@@ -22,6 +22,7 @@ with open(inputfilename) as file_object:
 for line in lines:
    value = line.rstrip()
    filelist.append(value)
+
 
 #This creates a list of all the individual sublists by appending individual lists first and then appending these inner lists to the outer list
 megalist = []
@@ -91,7 +92,7 @@ cog_score_f_rate = cog_score_f / ( N * 0.01)
 cog_succ_rate = cog_succ / ( N * 0.01)
 
 #Print out results
-print("The size of is " + str(len(megalist)))
+print("The size of family is " + str(len(megalist)))
 print(" ")
 
 print("The matrix incompatible rate is " + "{:.2f}".format(incomp_rate) + "%")
@@ -144,16 +145,12 @@ nrows, ncols = N,N
 image = np.array(mat)
 # Reshape things into a NxN grid.
 image = image.reshape((nrows, ncols))
-image = np.transpose(image)
+#image = np.transpose(image)
 row_labels = filelist
 col_labels = filelist
 plt.matshow(image,cmap=cmap,vmin=0,vmax=3)
-
-# Uncomment following 2 lines if you want PDB Labels on x and y axis
-
-#plt.xticks(range(ncols), col_labels, rotation = 90, fontsize = fontsz)
-#plt.yticks(range(nrows), row_labels, fontsize = fontsz)
-
+plt.xticks(range(ncols), col_labels, rotation = 90, fontsize = fontsz)
+plt.yticks(range(nrows), row_labels, fontsize = fontsz)
 ax = plt.gca();
 ax.set_xticks(np.arange(-.5, N, 1), minor=True);
 ax.set_yticks(np.arange(-.5, N, 1), minor=True);
@@ -168,8 +165,8 @@ y=[]
 for i in range(N):
 	x.append(i)
 	y.append(i)
-plt.plot(x, y, 'w.', markersize = marksz)
+plt.plot(y, x, 'w.', markersize = marksz)
 # Gridlines based on minor ticks
 ax.grid(which='minor', color='k', linestyle='-', linewidth=linesz)
-plt.savefig("heatmap.png")
+plt.savefig("heatmap.pdf")
 

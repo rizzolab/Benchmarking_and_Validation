@@ -6,6 +6,8 @@
 #SBATCH --job-name=PoseReproduction(SeedNumber)
 #SBATCH --output=PoseReproduction(SeedNumber).out
 
+#This script runs pose reproduction on entire test set specified
+
 # Load compilers for DOCK
 module load gcc-stack
 
@@ -29,7 +31,7 @@ seed="0"
 
 #srun uses all of the cores available to run the docking in parallel
 for system in `cat ${system_file}`; do
-   srun --mem=1000 --exclusive -N1 -n1 FLX.sh  ${system} ${testset} $seed $conditions $dock_dir &
+   srun --mem=0 --exclusive -N1 -n1 FLX.sh  ${system} ${testset} $seed $conditions $dock_dir &
 done
 
 wait

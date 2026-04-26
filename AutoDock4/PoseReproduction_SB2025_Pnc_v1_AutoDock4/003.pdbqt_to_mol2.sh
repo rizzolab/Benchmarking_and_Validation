@@ -1,3 +1,5 @@
+#This script converts pdbqt to mol2 and deletes polar Hydrogens to later enable RMSD calc
+
 #openbabel used for pdbqt to mol2 conversion. Alternatively chimera could be used
 module load openbabel
 

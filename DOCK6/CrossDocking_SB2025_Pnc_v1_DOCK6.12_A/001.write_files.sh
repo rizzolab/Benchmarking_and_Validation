@@ -1,4 +1,5 @@
 #!/bin/sh
+#This script writes input files for DOCK6 cartesian minimization and docking
 
 # This script writes all of the dock input files for cartesian minimization and docking for every single pair in a family
 cd ${CROSSDOCK_DIR}

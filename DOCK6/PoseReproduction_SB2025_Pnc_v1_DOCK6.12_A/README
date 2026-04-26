@@ -1,4 +1,4 @@
-Directory Architecture
+Drectory Architecture
   A testset should be prepared with separate subdirectories for each system being tested.
 
 
@@ -12,7 +12,8 @@ Analysis
   Load python3 or anaconda3 module
 
   python calculate_dock6.results.py $condition_$seed $system_file
-    Insert values from 001.submit_dock.sh for command line arguments. Cat condition and seed (ie Default_0)
+    Insert values from 001.submit_dock.sh for command line arguments. Cat condition and seed 
+    (ie  python calculate_dock6.results.py Default_0 clean.systems.all)
 
 Trouble shooting
   Are compilers for running DOCK loaded?

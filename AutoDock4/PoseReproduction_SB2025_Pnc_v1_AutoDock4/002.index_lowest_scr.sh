@@ -1,4 +1,4 @@
-module load openbabel
+# This script determines the index of best scoring pose in each LGA run
 
 
 for sys in `  cat $system_file `

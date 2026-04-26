@@ -6,6 +6,8 @@
 #SBATCH --job-name=AD4_run01_(SeedNumber)
 #SBATCH --output=AD4_run01_(SeedNumber).out
 
+#This script runs docking
+
 #Both mgltools and AutoDock needed to run script
 #If these are not available as modules, substitute in the global paths in script being called
 module load mgltools/1.5.6

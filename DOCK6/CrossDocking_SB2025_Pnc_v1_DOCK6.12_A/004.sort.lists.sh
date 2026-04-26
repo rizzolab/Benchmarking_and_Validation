@@ -1,4 +1,5 @@
-# This script calls Rearrange_Lists.py which will sort the results to make the output heatmaps organized
+# This script calls Rearrange_Lists.py which will sort the results to make the output heatmaps organized by descending summated score in each row,
+# where success=3, score fail=2, sample fail=1
 
 module unload anaconda/2
 module load anaconda/3

@@ -2,6 +2,17 @@
 TroubleShooting
   If a new login  session need to source 000.source.env.sh each time For running all scripts
 
-  You need to have chimera as module which can be loaded. If not 001.align.submit.sh needs to be run locally on 
-  chimera gui
+#Set YOURPATH and specify if using downloaded testset or building own
+source 000.source.env.sh
+bash 001.write_files.sh
+bash 002.run.crossdock.sh
+bash 003.results.sh
+bash 004.sort.lists.sh
+bash 005.rerun.results_h.sh
+#This generates the heatmaps in Heatmaps folder and calls Make_ploth.py
+bash 006.make.heatmaps.sh
 
+#Only if building your own set of family structures START with these 3 scripts. It requires chimera module for mmaker align proteins
+prep.001.align.sh
+prep.002.build.sh
+prep.003.transfer.sh

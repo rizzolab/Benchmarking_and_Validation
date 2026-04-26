@@ -19,7 +19,7 @@ seed="0"
 for lig_system in `cat ${system_file}`; do
   mkdir $lig_system
   for rec_system in `cat ${system_file}`; do
-   srun --mem=1000 --exclusive -N1 -n1 FLX.sh  ${lig_system} $rec_system ${testset} $seed &
+   srun --mem=0 --exclusive -N1 -n1 FLX.sh  ${lig_system} $rec_system ${testset} $seed &
   done
   wait
 done

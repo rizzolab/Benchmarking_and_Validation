@@ -1,0 +1,14 @@
+#Set YOURPATH 
+source 000.source_global_var.sh
+
+#This runs crossdocking and calls LGA_CD.sh
+bash 001.run_crossdock.sh
+
+bash 002.pdbqt_to_mol2.sh
+
+bash 003.dock6_RMSDh.sh
+
+bash 004.calc_outcome.sh
+
+#This generates the heatmaps in Heatmaps folder and calls Make_ploth.py
+bash 005.heatmaps.sh

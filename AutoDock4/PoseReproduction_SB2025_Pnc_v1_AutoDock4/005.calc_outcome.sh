@@ -1,4 +1,4 @@
-
+#This script calculates success, score fail an sample fail rates and prints to screen
 rm Outcome.txt
 
 
@@ -43,7 +43,7 @@ sco_r=`echo " $sco / $len " | bc -l`
 sam_r=`echo " $sam / $len " | bc -l`
 
 echo "Success " $succ_r
-echo "Scoring " $sco_r
-echo "Sampling " $sam_r
+echo "Scoring Fail" $sco_r
+echo "Sampling Fail" $sam_r
 
 
