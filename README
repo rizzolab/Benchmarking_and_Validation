@@ -2,8 +2,9 @@ This set of scripts should be preserved on the github.
 
 If a new set of scripts is created, it should be separate and with a new version number.
 
-The tutorials associated with these scripts can be found at:
+The tutorials associated with these scripts for DOCK6 can be found at:
 https://ringo.ams.stonybrook.edu/index.php/Benchmarking_Lab_SOPs
+Much of the theory discussed in the tutorials is also applicable to AutoDock4 and Vina, even though the particular scripts and steps will be different.
 
 Choose the tutorial version which matches the set of scripts used.
 
