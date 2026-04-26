@@ -6,6 +6,9 @@ The tutorials associated with these scripts for DOCK6 can be found at:
 https://ringo.ams.stonybrook.edu/index.php/Benchmarking_Lab_SOPs
 Much of the theory discussed in the tutorials is also applicable to AutoDock4 and Vina, even though the particular scripts and steps will be different.
 
+Each program (DOCK6, AutoDock4 and AutoDock Vina) will have a script for each of the 4 experiments (Pose Reproduction, Cross Docking, Database Enrichment and Reverse Docking).
+There will be a README file associated for each experiment.
+
 Choose the tutorial version which matches the set of scripts used.
 
 NOTE: While Testset construction and Benchmarking tutorials are on same page on wiki, these repositories are deliberately kept separate, as it is not always necessary to run both testset construction in pair with Benchmarking
