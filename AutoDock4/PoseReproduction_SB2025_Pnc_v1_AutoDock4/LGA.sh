@@ -11,7 +11,7 @@ cd ${sys}
 #Use MGL Tools to generate docking parameter file
 echo "Docking parameter file is being generated"
 /gpfs/software/mgltools/bin/prepare_dpf42.py -l $testset/$sys/$sys.lig.gast.pdbqt -r $testset/$sys/$sys.rec.clean.pdbqt -o $sys.dock.parameter.dpf
-sed -i "2i parameter_file ${work_dir}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${ref_sys}.dock.parameter.dpf
+sed -i "2i parameter_file ${work_dir}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${sys}.dock.parameter.dpf
 input="${sys}.dock.parameter.dpf"
 x=0
 rm ${sys}.docking.dpf
