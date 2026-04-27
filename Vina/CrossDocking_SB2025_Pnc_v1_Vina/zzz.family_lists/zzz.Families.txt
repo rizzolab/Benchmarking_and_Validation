@@ -1,0 +1,11 @@
+3-hydroxy-3-methylglutaryl-coenzyme_A_reductase
+Acetylcholinesterase
+Carbonic_anhydrase_2
+D3_dopamine_receptor
+Epidermal_growth_factor_receptor
+Estrogen_receptor
+Glutamate_receptor_2
+HIV_Protease
+HIV_Reverse_Transcriptase
+Heat_shock_protein_HSP_90-alpha
+cGMP-specific_3

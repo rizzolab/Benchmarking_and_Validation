@@ -6,7 +6,7 @@ echo ${sys}
 
 cd ${sys}
 
-rm RMSD_grep.txt
+rm RMSDh_grep.txt
 rm rescore.in
 
 cat >rescore.in<<EOF
