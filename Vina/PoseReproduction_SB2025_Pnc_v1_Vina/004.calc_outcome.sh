@@ -11,7 +11,7 @@ cd ${sys}/
 
 RMSD1=`head -n 1 RMSDh_grep.txt | tail -n1 `
 
-sort -n RMSDh_grep.txt >> RMSDh_grep_sort.txt
+sort -n RMSDh_grep.txt > RMSDh_grep_sort.txt
 RMSD2=`head -n 1 RMSDh_grep_sort.txt`
 
 if (( $(echo "$RMSD1 < 2.00" | bc -l) )); then
