@@ -1,8 +1,8 @@
 #This script calculates AUC at 1% of database screened
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 01/2024
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 import sys,os
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt

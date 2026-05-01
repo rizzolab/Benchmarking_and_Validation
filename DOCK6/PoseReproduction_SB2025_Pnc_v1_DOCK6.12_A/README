@@ -8,9 +8,12 @@ Running Pose Reproduction
     or
     bash 001.submit_dock.sh
 
+   Output: In each directory should have a mol2 with the suffix "_scored.mol2"
+
 Analysis
   Load python3 or anaconda3 module
 
+This script will print statistics to screen
   python calculate_dock6.results.py $condition_$seed $system_file
     Insert values from 001.submit_dock.sh for command line arguments. Cat condition and seed 
     (ie  python calculate_dock6.results.py Default_0 clean.systems.all)

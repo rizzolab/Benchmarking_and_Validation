@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # This script will use the mmaker function in Chimera to align all receptors in a family along their backbones
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 01/2024
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 module load chimera/1.13.1
 
 testset="$1"

@@ -1,8 +1,8 @@
 # This script will read a rank sorted list of actives and decoys and plot ROC Curves and calculate AUC and Enrichment Factor 1% values 
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 1/2024
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 
 system="$1"
 testset="$2"

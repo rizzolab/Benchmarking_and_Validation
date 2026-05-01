@@ -4,6 +4,7 @@
 # Last Edit Date: 10/2021
 # Last Edit by: C Corbo
 system_file="DUDE.systems.all"
+mkdir zzz.plots
 for sys in `cat ${system_file}`; do
 sys=3CCW
 
@@ -54,7 +55,7 @@ sys=3CCW
    echo "100%"  >> ../Statistics.txt
 
    python ../zzz.scripts/plot_roc.py ${act_count} ${dec_count} ${sys} >> ../Statistics.txt
-   mv ${sys}*.pdf ../plots
+   mv ${sys}*.png ../zzz.plots
 
    cd ..
 done

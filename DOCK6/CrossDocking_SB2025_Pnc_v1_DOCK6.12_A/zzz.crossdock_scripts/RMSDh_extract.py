@@ -1,9 +1,9 @@
 # This script assesses the outcome of each crossdocking result for a given family. 
 # The minimization output mol2 is the first arguement and the dock output mol2 is the second argument. 
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 02/2025
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 
 import sys
 minfilename = sys.argv[1]                                                                                                                                             

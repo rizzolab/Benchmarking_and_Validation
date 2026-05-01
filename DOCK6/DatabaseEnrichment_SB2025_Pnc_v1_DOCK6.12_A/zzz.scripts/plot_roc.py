@@ -1,9 +1,9 @@
 # This script reads in a rank sorted list of actives and decoys and plots the ROC curve f
 # database screened 
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 01/2024
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 import sys,os
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt

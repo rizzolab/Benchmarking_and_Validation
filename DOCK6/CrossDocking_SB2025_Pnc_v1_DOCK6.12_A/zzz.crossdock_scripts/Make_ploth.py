@@ -1,9 +1,9 @@
 # This script makes a heatmap based on crossdocking results for a family and also prints out the docking statistics for cognate pairs in a family plus all
 # off diagonal pairs
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
-# Last Edit Date: 02/2021
-# Last Edit by: Christopher Corbo
+# Last Edit Date: 02/2024
+# Last Edit by: C Corbo
 import sys
 import matplotlib.pyplot as plt
 import numpy as np

@@ -2,13 +2,13 @@
 #It will also print how many actives are in top 1% and 10% of database 
 # Written by: Christopher Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
-# Last Edit Date: 10/2021
 # Last Edit by: C Corbo
+
 module load anaconda/3
 
+mkdir zzz.plots
 system_file="DUDE.systems.all"
-#for sys in `cat ${system_file}`; do
-sys=3CCW
+for sys in `cat ${system_file}`; do
 
    cd ${sys}
 
@@ -57,7 +57,7 @@ sys=3CCW
    echo "100%"  >> ../Statistics.txt
 
    python ../zzz.scripts/plot_roc.py ${act_count} ${dec_count} ${sys} >> ../Statistics.txt
-   mv ${sys}*.pdf ../plots
+   mv ${sys}*.png ../zzz.plots
 
    cd ..
-#done
+done

@@ -1,8 +1,8 @@
 # This script sorts crossdocking families by the score of each receptor on all of its results (success = 3, score fail = 2, sample fail = 1)
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 02/2021
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
