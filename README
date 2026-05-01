@@ -3,7 +3,7 @@ This set of scripts should be preserved on the github.
 If a new set of scripts is created, it should be separate and with a new version number.
 
 The tutorials associated with these scripts for DOCK6 can be found at:
-https://ringo.ams.stonybrook.edu/index.php/Benchmarking_Lab_SOPs
+https://ringo.ams.stonybrook.edu/index.php/Benchmarking_Protocols_and_Lab_SOPs
 Much of the theory discussed in the tutorials is also applicable to AutoDock4 and Vina, even though the particular scripts and steps will be different.
 
 Each program (DOCK6, AutoDock4 and AutoDock Vina) will have a script for each of the 4 experiments (Pose Reproduction, Cross Docking, Database Enrichment and Reverse Docking).
