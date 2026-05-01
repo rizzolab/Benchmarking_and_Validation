@@ -1,0 +1,17 @@
+#The DUDE systems should be placed directly in this directory with the architecture provided in the download (System/actives and System/decoys) 
+#The 2 files found on download page Total_LE_Actives.txt and Total_LE_Decoys.txt should be placed directly in this directory.
+
+#This script runs docking and calls LGA_DE.sh 
+#You may want to run each DUDE system separately.
+sbatch 001.submit.sh
+
+#Once all included DUDE systems have been run can proceed to these scripts which will run in batch mode.
+#However it's also adviseable to test a single case of complete docking results to ensure it was successful before docking all systems.
+bash 002.score_sort.sh
+
+bash 003.interleave_isoenerg.sh
+
+bash 004.append_undocked.sh
+
+#This script writes AUC and actives retrieved data into Statistics.txt and  puts roc curves into zzz.plots directory 
+bash 005.make_roc.sh
