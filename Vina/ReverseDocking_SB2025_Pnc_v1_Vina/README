@@ -1,0 +1,9 @@
+#Set testset dir
+source 000.source_global_var.sh
+
+bash 001.run_revdock.sh
+
+bash 002.print_rank.sh
+
+module load anaconda/3 or python/3
+python rd_plot.py
