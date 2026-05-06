@@ -61,9 +61,9 @@ simplex_random_seed                                          0
 simplex_restraint_min                                        yes
 simplex_coefficient_restraint                                10.0
 atom_model                                                   all
-vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/vdw_AMBER_parm99.defn
-flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex.defn
-flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex_drive.tbl
+vdw_defn_file                                                ${DOCK_DIR}/parameters/vdw_AMBER_parm99.defn
+flex_defn_file                                               ${DOCK_DIR}/parameters/flex.defn
+flex_drive_file                                              ${DOCK_DIR}/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.min
 write_mol_solvation                                          no
 write_orientations                                           no
@@ -134,9 +134,9 @@ simplex_grow_tors_premin_iterations                          0
 simplex_random_seed                                          0
 simplex_restraint_min                                        no
 atom_model                                                   all
-vdw_defn_file                                                /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/vdw_AMBER_parm99.defn 
-flex_defn_file                                               /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex.defn
-flex_drive_file                                              /gpfs/projects/rizzo/ccorbo/DOCK_Builds/dock6.12/parameters/flex_drive.tbl
+vdw_defn_file                                                ${DOCK_DIR}/parameters/vdw_AMBER_parm99.defn 
+flex_defn_file                                               ${DOCK_DIR}/parameters/flex.defn
+flex_drive_file                                              ${DOCK_DIR}/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${comp_system}_${ref_system}.FLX
 write_mol_solvation                                          no
 write_orientations                                           no

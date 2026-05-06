@@ -6,6 +6,7 @@ lig_system=${1}
 rec_system=$2
 system_dir=${3}
 seed=$4
+dock_dir=$5
 cd ${lig_system}
 
 
@@ -66,9 +67,9 @@ simplex_final_min                                            no
 simplex_random_seed                                          $seed
 simplex_restraint_min                                        no
 atom_model                                                   all
-vdw_defn_file                                                dock6.12_mpi/parameters/vdw_AMBER_parm99.defn 
-flex_defn_file                                               dock6.12_mpi/parameters/flex.defn
-flex_drive_file                                              dock6.12_mpi/parameters/flex_drive.tbl
+vdw_defn_file                                                $dock_dir/parameters/vdw_AMBER_parm99.defn 
+flex_defn_file                                               $dock_dir/parameters/flex.defn
+flex_drive_file                                              $dock_dir/parameters/flex_drive.tbl
 ligand_outfile_prefix                                        ${lig_system}_${rec_system}_$seed
 write_mol_solvation                                          no
 write_orientations                                           no
@@ -79,6 +80,6 @@ rank_ligands                                                 no
 EOF
 
 
-dock6 -i FLX_${rec_system}_${seed}.in -o FLX_${rec_system}_${seed}.out
+$dock_dir/dock6 -i FLX_${rec_system}_${seed}.in -o FLX_${rec_system}_${seed}.out
 
 cd ../
