@@ -21,7 +21,7 @@ cd $system
 mkdir actives
 cd actives
 
-
+ls -l | awk '{print $9}' | grep active\.pdbqt > List_of_actives.txt
 list_active="List_of_actives.txt"
 
 #Dock the active set of molecules
@@ -38,6 +38,7 @@ cd ../
 mkdir decoys
 cd decoys
 
+ls -l | awk '{print $9}' | grep decoy\.pdbqt > List_of_decoys.txt
 
 #This section breaks decoys into manageable sized lists which dont exceed memory
 ##################
