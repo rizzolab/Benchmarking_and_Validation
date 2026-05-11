@@ -2,7 +2,7 @@
 export testset="YOURPATH/zzz.SB2025_AutoDock_Distribution"
 
 #list of systems for docking
-export system_file="clean.systems.all "
+export system_file="SB2025.systems.all"
 
 #Set a random seed
 export seed=1

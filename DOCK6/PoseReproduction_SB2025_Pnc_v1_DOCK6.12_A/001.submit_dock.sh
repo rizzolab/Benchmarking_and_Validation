@@ -15,7 +15,7 @@ module load gcc-stack
 testset="YOURPATH/SB2025_v1_DOCK6_full"
 
 # List of PDB Codes with prepared files
-system_file="clean.systems.all"
+system_file="SB2025.systems.all"
 
 #Path to dock executable upper most folder (dont include bin)
 dock_dir="YOURPATH/dock6.12"
