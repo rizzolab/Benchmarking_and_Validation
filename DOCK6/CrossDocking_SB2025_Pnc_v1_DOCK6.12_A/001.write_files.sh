@@ -7,7 +7,6 @@ cd ${CROSSDOCK_DIR}
 
 list_of_fam="${WORK_DIR}/zzz.family_lists/zzz.Families.txt"
 for ref_fam in `cat ${list_of_fam}`; do  ### Open for loop 1
-
 echo $ref_fam
 mkdir ${ref_fam}
 cd ${ref_fam}
