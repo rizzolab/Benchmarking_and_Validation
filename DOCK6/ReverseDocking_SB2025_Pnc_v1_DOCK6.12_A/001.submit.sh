@@ -1,8 +1,8 @@
 #!/bin/sh 
 #SBATCH --partition=
 #SBATCH --time=40:00:00
-#SBATCH --nodes=3
-#SBATCH --ntasks=40
+#SBATCH --nodes=
+#SBATCH --ntasks=
 #SBATCH --job-name=
 #SBATCH --output=
 

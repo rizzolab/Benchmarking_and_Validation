@@ -1,8 +1,8 @@
 #!/bin/sh
-#SBATCH --partition=rn-long-40core
+#SBATCH --partition=
 #SBATCH --time=12:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=28
+#SBATCH --nodes=
+#SBATCH --ntasks=
 #SBATCH --job-name=print_rank_pro
 #SBATCH --output=print_rank_pro.out
 for lig_sys in `cat FARMA.systems.all`;do

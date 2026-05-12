@@ -1,0 +1,6 @@
+sbatch 001.submit.sh
+bash 002.print_rank_cognate.sh
+bash 003.print_rank_protein_pairs.sh
+bash 004.print_rank_class_pairs.sh
+bash 005.sort_out.sh
+python plot_ranking.py
