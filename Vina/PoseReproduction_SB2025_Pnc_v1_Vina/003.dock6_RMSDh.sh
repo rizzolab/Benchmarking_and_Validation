@@ -1,4 +1,4 @@
-
+#Calculate RMSDh using DOCK6
 for sys in `  cat ${system_file} `
 do
 echo ${sys}

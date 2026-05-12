@@ -1,8 +1,8 @@
 #!/bin/sh
 #SBATCH --partition=
 #SBATCH --time=12:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=40
+#SBATCH --nodes=
+#SBATCH --ntasks=
 #SBATCH --job-name=003_AD4_RMSDh
 #SBATCH --output=003_AD4_RMSDh.out
 

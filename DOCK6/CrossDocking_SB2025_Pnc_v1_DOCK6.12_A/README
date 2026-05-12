@@ -5,7 +5,7 @@ TroubleShooting
 #Set YOURPATH and specify if using downloaded testset or building own
 source 000.source.env.sh
 bash 001.write_files.sh
-bash 002.run.crossdock.sh
+sbatch 002.run.crossdock.sh
 bash 003.results.sh
 bash 004.sort.lists.sh
 bash 005.rerun.results_h.sh

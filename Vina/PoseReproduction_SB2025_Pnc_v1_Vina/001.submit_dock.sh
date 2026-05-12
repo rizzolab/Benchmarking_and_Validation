@@ -1,8 +1,8 @@
 #!/bin/sh
-#SBATCH --partition=rn-long-40core
+#SBATCH --partition=
 #SBATCH --time=20:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=40
+#SBATCH --nodes=
+#SBATCH --ntasks=
 #SBATCH --job-name=Vina_run01_(SeedNumber)
 #SBATCH --output=Vina_run01_(SeedNumber).out
 

@@ -1,8 +1,8 @@
 #!/bin/sh
 #SBATCH --partition=
 #SBATCH --time=168:00:00
-#SBATCH --nodes=2
-#SBATCH --ntasks=40
+#SBATCH --nodes=
+#SBATCH --ntasks=
 #SBATCH --job-name=001_AD4_CD
 #SBATCH --output=001_AD4_CD.out
 

@@ -155,13 +155,16 @@ done
 cd ../
 done
 
+#This will copy over relevant files from downloaded testset directory
 if [ "$prepped_set" = "yes" ];then
  family_list="${LIST_DIR}/zzz.Families.txt"
+ #CD Family for loop
  for ref_fam in `cat $family_list`; do
    ref_list="${LIST_DIR}/${ref_fam}.txt"
    for  ref_system  in  `cat $ref_list`; do
      cp ${TESTSET_DIR}/${ref_fam}/${ref_system}.lig.am1bcc.mol2 $ref_fam/${ref_system}
      cp ${TESTSET_DIR}/${ref_fam}/${ref_system}.rec* $ref_fam/${ref_system}
    done
+ #End CD Family for loop
  done
 fi

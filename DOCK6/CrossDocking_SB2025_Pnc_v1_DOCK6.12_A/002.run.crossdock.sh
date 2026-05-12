@@ -4,11 +4,12 @@
 #SBATCH --nodes=
 #SBATCH --ntasks=
 #SBATCH --job-name=CD_Run
-#SBATCH --output=CD_Run
+#SBATCH --output=CD_Run.out
 
 # This script runs the cartesian minimization and docking in the last step.
 
 list_of_fam=zzz.family_lists/zzz.Families.txt
+#CD Family for loop
 for ref_fam in `cat ${list_of_fam}`; do
   echo -n "Running Family: "
   echo ${ref_fam}
@@ -21,6 +22,6 @@ for ref_fam in `cat ${list_of_fam}`; do
   done
   
   wait
-  
+#End CD Family for loop  
 done
 
