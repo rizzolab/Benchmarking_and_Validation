@@ -16,14 +16,14 @@ dock_dir=docking
 work_dir=`pwd`
 cd $system
 
-mkdir actives
+mkdir -p actives
 cd actives
 
 ls -l | awk '{print $9}' | grep active\.pdbqt > List_of_actives.txt
 list_active="List_of_actives.txt"
 
 #Dock the active set of molecules
-mkdir ${dock_dir}
+mkdir -p ${dock_dir}
 for active in `cat $list_active`;do
    srun --mem=0 --exclusive -N1 -n1 -W 0  bash ${work_dir}/vina_DE.sh $active $system active $dock_dir &
 
@@ -33,7 +33,7 @@ wait
 
 cd ../
 
-mkdir decoys
+mkdir -p decoys
 cd decoys
 
 ls -l | awk '{print $9}' | grep decoy\.pdbqt > List_of_decoys.txt
@@ -65,7 +65,7 @@ done
 
 #Now dock the decoys one list at a time
 ###################
-mkdir ${dock_dir}
+mkdir -p ${dock_dir}
 for list_decoy in `cat Master_list.txt`;do
 
 for decoy in `cat $list_decoy`;do

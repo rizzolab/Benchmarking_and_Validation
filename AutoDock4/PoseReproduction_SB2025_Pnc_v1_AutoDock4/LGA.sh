@@ -5,7 +5,7 @@ sys=$2
 cond=$3
 seed=$4
 
-mkdir $sys
+mkdir -p $sys
 cd ${sys}
 
 #Use MGL Tools to generate docking parameter file

@@ -8,17 +8,17 @@ cd ${CROSSDOCK_DIR}
 list_of_fam="${WORK_DIR}/zzz.family_lists/zzz.Families.txt"
 for ref_fam in `cat ${list_of_fam}`; do  ### Open for loop 1
 echo $ref_fam
-mkdir ${ref_fam}
+mkdir -p ${ref_fam}
 cd ${ref_fam}
 
 list_of_sys1="${WORK_DIR}/zzz.family_lists/${ref_fam}.txt"
 for ref_system in `cat ${list_of_sys1}`; do
-mkdir ${ref_system}
+mkdir -p ${ref_system}
 cd ${ref_system}
 
 list_of_sys2="${WORK_DIR}/zzz.family_lists/${ref_fam}.txt"
 for comp_system in `cat ${list_of_sys2}`; do
-mkdir ${comp_system}
+mkdir -p ${comp_system}
 cd ${comp_system}
 
 ### Comp system will be the ligand and the rest of the files will be the ref system

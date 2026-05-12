@@ -9,10 +9,10 @@
 module load mgltools/1.5.6
 module load autodock/4.2.6
 
-mkdir $dock_dir
+mkdir -p $dock_dir
 cd $dock_dir
 for lig_sys in `cat $system_file`; do
- mkdir $lig_sys
+ mkdir -p $lig_sys
  cd $lig_sys
  for rec_sys in `cat ${system_file}`; do
     srun --exclusive --mem=0 -N1 -n1  bash ${work_dir}/LGA_RD.sh ${lig_sys} $rec_sys  $seed &

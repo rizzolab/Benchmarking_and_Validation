@@ -7,7 +7,7 @@ system_dir=${2}
 seed=$3
 function=$4
 dock_dir=$5
-mkdir ${system}
+mkdir -p ${system}
 cd ${system}
 
 

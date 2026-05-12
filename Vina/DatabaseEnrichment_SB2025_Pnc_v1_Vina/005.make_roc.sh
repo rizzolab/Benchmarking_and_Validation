@@ -4,7 +4,7 @@
 # Last Edit Date: 10/2021
 # Last Edit by: C Corbo
 system_file="DUDE.systems.all"
-mkdir zzz.plots
+mkdir -p zzz.plots
 for sys in `cat ${system_file}`; do
 sys=3CCW
 

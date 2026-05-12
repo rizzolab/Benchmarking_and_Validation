@@ -19,7 +19,7 @@ seed="0"
 
 #srun uses all of the cores available to run the docking in parallel
 for lig_system in `cat ${system_file}`; do
-  mkdir $lig_system
+  mkdir -p $lig_system
   for rec_system in `cat ${system_file}`; do
    srun --mem=0 --exclusive -N1 -n1 FLX.sh  ${lig_system} $rec_system ${testset} $seed $dock_dir &
   done

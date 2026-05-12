@@ -3,7 +3,7 @@ module load anaconda/3
 
 List_dir="$work_dir/zzz.family_lists"
 
-mkdir ${work_dir}/HeatMaps
+mkdir -p ${work_dir}/HeatMaps
 
 echo "Making heatmap for family: "
 

@@ -5,7 +5,7 @@ module load anaconda/3
 
 RELIST_DIR=$WORK_DIR/zzz.rearrange_lists
 
-mkdir ${WORK_DIR}/HeatMaps
+mkdir -p ${WORK_DIR}/HeatMaps
 
 echo "Making heatmap for family: "
 

@@ -6,7 +6,7 @@
 
 module load anaconda/3
 
-mkdir zzz.plots
+mkdir -p zzz.plots
 system_file="DUDE.systems.all"
 for sys in `cat ${system_file}`; do
 

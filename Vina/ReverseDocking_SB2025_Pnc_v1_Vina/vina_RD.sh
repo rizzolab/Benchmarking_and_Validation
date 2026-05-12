@@ -1,7 +1,7 @@
 lig_sys=$1
 rec_sys=$2
 seed=$3
-mkdir $rec_sys
+mkdir -p $rec_sys
 cd $rec_sys
 
 echo $lig_sys " " $rec_sys

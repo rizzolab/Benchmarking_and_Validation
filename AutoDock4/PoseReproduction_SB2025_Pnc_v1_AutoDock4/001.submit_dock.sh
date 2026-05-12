@@ -13,7 +13,7 @@
 module load mgltools/1.5.6
 module load autodock/4.2.6
 
-mkdir zzz.output
+mkdir -p zzz.output
 
 for system in `cat ${system_file}`; do
    srun --exclusive --mem=0 -N1 -n1  bash ./LGA.sh $testset ${system}  ${conditions} $seed &> ./zzz.output/${system}.out    &

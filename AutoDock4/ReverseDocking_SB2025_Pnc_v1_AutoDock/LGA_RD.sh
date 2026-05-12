@@ -4,7 +4,7 @@ rec_sys=$2
 seed=$3
 
 echo "Running: " ${lig_sys} " " $rec_sys
-mkdir ${rec_sys}
+mkdir -p ${rec_sys}
 cd ${rec_sys}
 #This will be used to create the docking parameter file and to make modification to the docking parameters follow the comments for prepare_gpf4.py
 echo "Docking parameter file is being generated"

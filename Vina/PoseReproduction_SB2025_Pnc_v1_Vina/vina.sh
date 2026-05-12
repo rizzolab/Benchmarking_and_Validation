@@ -1,7 +1,7 @@
 
 sys=$1
 echo $sys
-mkdir $sys
+mkdir -p $sys
 cd $sys
 
 cp $testset/$sys/$sys.rec.clean.gpf ./

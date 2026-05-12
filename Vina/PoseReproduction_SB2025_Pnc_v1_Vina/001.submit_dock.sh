@@ -10,7 +10,7 @@
 #If  not available as module, substitute in the global paths in script being called
 module load autodock-vina/1.1.2
 
-mkdir zzz.output
+mkdir -p zzz.output
 
 for system in `cat ${system_file}`; do
    srun --exclusive --mem=0 -N1 -n1  bash ./vina.sh  ${system}   &> ./zzz.output/${system}.out    &

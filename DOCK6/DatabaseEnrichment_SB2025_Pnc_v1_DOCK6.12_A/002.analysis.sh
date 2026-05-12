@@ -5,7 +5,7 @@ system_file=
 #Upper directory where all docking files are located
 testset=
 
-mkdir plots
+mkdir -p plots
 for system in `cat ${system_file}`; do
   #This appends undocked molecules to end of list at random enrichment rate
   ./zzz.scripts/finish_roc.sh $system $testset

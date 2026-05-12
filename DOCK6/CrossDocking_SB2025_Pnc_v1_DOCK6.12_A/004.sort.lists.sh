@@ -4,7 +4,7 @@
 module load anaconda/3
 
 
-mkdir zzz.rearrange_lists
+mkdir -p zzz.rearrange_lists
 RELIST_DIR=$WORK_DIR/zzz.rearrange_lists
 
 echo "Sorting results for family: "

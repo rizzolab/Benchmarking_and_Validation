@@ -1,4 +1,4 @@
-
+#Calculate success, score failure and sample failure rates
 rm Outcome.txt
 
 
