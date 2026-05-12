@@ -12,14 +12,14 @@ module load autodock-vina/1.1.2
 
 mkdir -p zzz.output
 
-for system in `cat ${system_file}`; do
+for system in `cat ${system_file_pr}`; do
    srun --exclusive --mem=0 -N1 -n1  bash ./vina.sh  ${system}   &> ./zzz.output/${system}.out    &
 done
 
 wait
 
 #Alternatively can run in serial
-#for system in `cat ${system_file}`; do
+#for system in `cat ${system_file_pr}`; do
 #    bash ./vina.sh  ${system}   > ./zzz.output/${system}.out    
 #done
 

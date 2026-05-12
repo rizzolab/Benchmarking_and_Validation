@@ -11,35 +11,35 @@
 #Cognate ranking
 cd FARMA2025_V1
 
-for lig_sys in `cat $work_dir/FARMA.systems.all`;do
+for lig_sys in `cat $work_dir_vina_rd/FARMA.systems.all`;do
   cd $lig_sys
   rm -f tmp_scores_cognate*
-  for sys in `cat $work_dir/FARMA.systems.all `;do
+  for sys in `cat $work_dir_vina_rd/FARMA.systems.all `;do
     cd $sys
-    val=`grep RESULT $lig_sys.vina$seed.pdbqt| head -n1`
+    val=`grep RESULT $lig_sys.vina$seed_vina_rd.pdbqt| head -n1`
     cd ../
     echo $sys " " $val >> tmp_scores_cognate.txt
   done
   sort -n -k5 tmp_scores_cognate.txt  > tmp_scores_cognate_sort.txt 
   val=`sort -n -k5  tmp_scores_cognate.txt| grep $lig_sys | awk '{print $5}'`
   rank=`grep -n -e $val tmp_scores_cognate_sort.txt | head -n1 | awk -F ':' '{print $1}'`
-  echo $lig_sys " " $rank >> $work_dir/zzy.cognate_rec_rank.dat
+  echo $lig_sys " " $rank >> $work_dir_vina_rd/zzy.cognate_rec_rank.dat
   cd ..
 done
 
 #Protein Family
-for lig_sys in `cat $work_dir/FARMA.systems.all`;do
+for lig_sys in `cat $work_dir_vina_rd/FARMA.systems.all`;do
   cd $lig_sys
   rm -f tmp_scores_fam*
-  for sys in `cat $work_dir/FARMA.systems.all `;do
+  for sys in `cat $work_dir_vina_rd/FARMA.systems.all `;do
     cd $sys
-    val=`grep RESULT $lig_sys.vina$seed.pdbqt| head -n1`
+    val=`grep RESULT $lig_sys.vina$seed_vina_rd.pdbqt| head -n1`
     cd ../
     echo $sys " " $val >> tmp_scores_fam.txt
   done
   sort -n -k5 tmp_scores_fam.txt  > tmp_scores_fam_sort.txt 
 
-  pairs=`grep $lig_sys $work_dir/FARMA_pairs.dat `
+  pairs=`grep $lig_sys $work_dir_vina_rd/FARMA_pairs.dat `
   echo $pairs
   best_pair=`for pair in echo $pairs;do grep $pair tmp_scores_fam.txt ;done | sort -n -k2 | head -n1 | awk '{print $1}'`
 
@@ -47,23 +47,23 @@ for lig_sys in `cat $work_dir/FARMA.systems.all`;do
 
   rank=`grep -n -e $val tmp_scores_fam_sort.txt | head -n1 | awk -F ':' '{print $1}'`
 
-  echo $lig_sys " " $rank >> $work_dir/zzy.family_rec_rank.dat
+  echo $lig_sys " " $rank >> $work_dir_vina_rd/zzy.family_rec_rank.dat
   cd ..
 done
 
 #Protein Class
-for lig_sys in `cat $work_dir/FARMA.systems.all`;do
+for lig_sys in `cat $work_dir_vina_rd/FARMA.systems.all`;do
   cd $lig_sys
   rm -f tmp_scores_class*
-  for sys in `cat $work_dir/FARMA.systems.all `;do
+  for sys in `cat $work_dir_vina_rd/FARMA.systems.all `;do
     cd $sys
-    val=`grep RESULT $lig_sys.$seed.pdbqt| head -n1`
+    val=`grep RESULT $lig_sys.$seed_vina_rd.pdbqt| head -n1`
     cd ../
     echo $sys " " $val >> tmp_scores_class.txt
   done
   sort -n -k5 tmp_scores_class.txt  > tmp_scores_class_sort.txt 
 
-  pairs=`grep $lig_sys $work_dir/FARMA_class_pairs.dat `
+  pairs=`grep $lig_sys $work_dir_vina_rd/FARMA_class_pairs.dat `
   echo $pairs
   best_pair=`for pair in echo $pairs;do grep $pair tmp_scores_class.txt ;done | sort -n -k2 | head -n1 | awk '{print $1}'`
 
@@ -71,7 +71,7 @@ for lig_sys in `cat $work_dir/FARMA.systems.all`;do
 
   rank=`grep -n -e $val tmp_scores_class_sort.txt | head -n1 | awk -F ':' '{print $1}'`
 
-  echo $lig_sys " " $rank >> $work_dir/zzy.classily_rec_rank.dat
+  echo $lig_sys " " $rank >> $work_dir_vina_rd/zzy.classily_rec_rank.dat
   cd ..
 done
 

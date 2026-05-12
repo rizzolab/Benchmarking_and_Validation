@@ -1,7 +1,7 @@
 #!/bin/bash
 ref_fam=$1
 comp_sys=$2
-list_of_sys="${work_dir}/zzz.family_lists/${ref_fam}.txt"
+list_of_sys="${work_dir_ad4_cd}/zzz.family_lists/${ref_fam}.txt"
 
 for ref_sys in `cat ${list_of_sys}`; do
 cd ${ref_sys}
@@ -9,7 +9,7 @@ echo ${ref_sys}
 #This will be used to create the docking parameter file and to make modification to the docking parameters follow the comments for prepare_gpf4.py
 echo "Docking parameter file is being generated with ligand ${comp_sys} and receptor ${ref_sys}"
 /gpfs/software/mgltools/bin/prepare_dpf42.py -l ../../${comp_sys}.lig.gast.pdbqt -r ../../${ref_sys}.rec.clean.pdbqt -o ${ref_sys}.dock.parameter.dpf
-sed -i "2i parameter_file ${work_dir}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${ref_sys}.dock.parameter.dpf
+sed -i "2i parameter_file ${work_dir_ad4_cd}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${ref_sys}.dock.parameter.dpf
 input="${ref_sys}.dock.parameter.dpf"
 x=0
 rm -f ${ref_sys}.docking.dpf

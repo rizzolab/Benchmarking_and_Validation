@@ -2,7 +2,7 @@
 rm -f Outcome.txt
 
 
-for sys in `  cat ${system_file} `
+for sys in `  cat ${system_file_pr} `
   do
   
   #echo $sys

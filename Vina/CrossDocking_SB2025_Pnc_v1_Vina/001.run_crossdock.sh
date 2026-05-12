@@ -10,20 +10,20 @@
 #If  not available as module, substitute in the global paths in script being called
 module load autodock-vina/1.1.2
 
-cd ${crossdock_dir}
+cd ${crossdock_dir_vina}
 
-#Copy over prepared/downloaded testset files
-cp -r $testset/* ./
+#Copy over prepared/downloaded testset_cd files
+cp -r $testset_cd/* ./
 
-list_of_fam="${work_dir}/zzz.family_lists/zzz.Families.txt"
+list_of_fam="${work_dir_vina_cd}/zzz.family_lists/zzz.Families.txt"
 #Run in parallel
 for ref_fam in `cat ${list_of_fam}`; do
   cd ${ref_fam}
   echo  "Running Family: " ${ref_fam}
-  list_of_sys="${work_dir}/zzz.family_lists/${ref_fam}.txt"
+  list_of_sys="${work_dir_vina_cd}/zzz.family_lists/${ref_fam}.txt"
   for comp_system in `cat ${list_of_sys}`; do
-     cd ${crossdock_dir}/${ref_fam}/${comp_system}
-     srun --mem=0 --exclusive -N1 -n1 bash ${work_dir}/vina_CD.sh ${ref_fam}  ${comp_system}  &
+     cd ${crossdock_dir_vina}/${ref_fam}/${comp_system}
+     srun --mem=0 --exclusive -N1 -n1 bash ${work_dir_vina_cd}/vina_CD.sh ${ref_fam}  ${comp_system}  &
 
   done
   wait
@@ -34,9 +34,9 @@ done
 #for ref_fam in `cat ${list_of_fam}`; do
 #  cd ${ref_fam}
 #  echo  "Running Family: " ${ref_fam}
-#  list_of_sys="${work_dir}/zzz.family_lists/${ref_fam}.txt"
+#  list_of_sys="${work_dir_vina_cd}/zzz.family_lists/${ref_fam}.txt"
 #  for comp_system in `cat ${list_of_sys}`; do
 #     cd ${WORK_DIR}/${ref_fam}/${comp_system}
-#     bash  ${work_dir}/LGA_CD.sh ${ref_fam}  ${comp_system} 
+#     bash  ${work_dir_vina_cd}/LGA_CD.sh ${ref_fam}  ${comp_system} 
 #  done
 #done

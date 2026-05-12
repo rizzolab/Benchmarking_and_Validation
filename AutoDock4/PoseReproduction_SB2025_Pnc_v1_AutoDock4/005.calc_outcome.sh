@@ -2,12 +2,12 @@
 rm -f Outcome.txt
 
 
-for sys in `  cat ${system_file} `;do
+for sys in `  cat ${system_file_pr} `;do
   
   #echo $sys
   cd ${sys}/
   
-  Index=`cat index_lowest_score_$conditions.txt`
+  Index=`cat index_lowest_score_$conditions_ad4_pr.txt`
   
   RMSD1=`head -n ${Index} RMSDh_grep.txt | tail -n1 `
   

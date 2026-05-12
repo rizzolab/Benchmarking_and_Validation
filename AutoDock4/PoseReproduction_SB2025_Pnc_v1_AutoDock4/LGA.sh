@@ -3,7 +3,7 @@
 testset=$1
 sys=$2
 cond=$3
-seed=$4
+seed_ad4_pr=$4
 
 mkdir -p $sys
 cd ${sys}
@@ -11,7 +11,7 @@ cd ${sys}
 #Use MGL Tools to generate docking parameter file
 echo "Docking parameter file is being generated"
 /gpfs/software/mgltools/bin/prepare_dpf42.py -l $testset/$sys/$sys.lig.gast.pdbqt -r $testset/$sys/$sys.rec.clean.pdbqt -o $sys.dock.parameter.dpf
-sed -i "2i parameter_file ${work_dir}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${sys}.dock.parameter.dpf
+sed -i "2i parameter_file ${work_dir_ad4_pr}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${sys}.dock.parameter.dpf
 input="${sys}.dock.parameter.dpf"
 x=0
 rm -f ${sys}.docking.dpf
@@ -44,7 +44,7 @@ do
     fi
     x=$(( x + 1 ))
 done < "$input"
-sed -i "s/pid time/${seed} ${seed}   /g" ${sys}.docking.dpf
+sed -i "s/pid time/${seed_ad4_pr} ${seed_ad4_pr}   /g" ${sys}.docking.dpf
 echo "DOCKING process is occuring"
 
 #Run the docking

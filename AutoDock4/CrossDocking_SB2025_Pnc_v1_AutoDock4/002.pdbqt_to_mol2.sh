@@ -8,9 +8,9 @@
 
 #This script converts pdbqt to mol2 and also determines lowest energy conformation 
 module load openbabel/2.4.1 
-List_dir="$work_dir/zzz.family_lists"
+List_dir="$work_dir_ad4_cd/zzz.family_lists"
 
-cd $crossdock_dir
+cd $crossdock_dir_ad4
 
 for ref_fam in `  cat $List_dir/zzz.Families.txt`;do
   echo ${ref_fam}

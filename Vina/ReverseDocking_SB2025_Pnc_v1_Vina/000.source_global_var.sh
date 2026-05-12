@@ -1,15 +1,14 @@
-export work_dir=`pwd`
-
-export dock_dir="FARMA2025_V1"
+export work_dir_vina_rd=`pwd`
 
 # Path to prepared testset files
-export testset="YOURPATH/FARMA2025_v1_AutoDock_RevDock/"
+export testset_rd="YOURPATH/FARMA2025_v1_AutoDock_RevDock/"
 
 #list of systems for docking
-export system_file="$work_dir/FARMA.systems.all "
+export system_file="$work_dir_vina_rd/FARMA.systems.all "
 
-#Set a random seed
-export seed=1
+#Set a random seed_vina_rd
+export seed_vina_rd=1
 
-export revdock_dir="${work_dir}/zzz.revdock"
+#This is where reverse docking will be run
+export revdock_dir_vina="${work_dir_vina_rd}/zzz.revdock"
 

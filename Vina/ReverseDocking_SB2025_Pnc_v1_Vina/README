@@ -1,4 +1,4 @@
-#Set testset dir
+#Set testset_rd dir
 source 000.source_global_var.sh
 
 bash 001.run_revdock.sh

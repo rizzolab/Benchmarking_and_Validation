@@ -3,7 +3,7 @@
 #openbabel used for pdbqt to mol2 conversion. Alternatively chimera could be used
 module load openbabel
 
-for sys in `  cat ${system_file}`
+for sys in `  cat ${system_file_pr}`
   do
   
   echo ${sys}
@@ -17,10 +17,10 @@ for sys in `  cat ${system_file}`
   obabel ${sys}.lig.gast.pdbqt -O ${sys}.lig.gast.noH.mol2 -d
   
   #Extract pdbqt dock poses from dlg
-  grep '^DOCKED' ${sys}.${conditions}.docking.dlg | cut -c9- > ${sys}.${conditions}.docking.pdbqt
+  grep '^DOCKED' ${sys}.${conditions_ad4_pr}.docking.dlg | cut -c9- > ${sys}.${conditions_ad4_pr}.docking.pdbqt
   
   #Delete Hydrogens and convert to mol2 
-  obabel ${sys}.${conditions}.docking.pdbqt -O ${sys}.${conditions}.docking.noH.mol2 -d
+  obabel ${sys}.${conditions_ad4_pr}.docking.pdbqt -O ${sys}.${conditions_ad4_pr}.docking.noH.mol2 -d
   
   cd ../
 

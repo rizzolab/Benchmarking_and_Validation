@@ -8,9 +8,9 @@
 
 #This script calculates RMSDh with DOCK6
 
-cd $crossdock_dir
+cd $crossdock_dir_ad4
 
-List_dir="$work_dir/zzz.family_lists"
+List_dir="$work_dir_ad4_cd/zzz.family_lists"
 for ref_fam in `  cat $List_dir/zzz.Families.txt`;do
 
 echo ${ref_fam}

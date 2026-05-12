@@ -21,6 +21,6 @@ z_size=$(echo $z_tmp*0.375 | bc)
 z_cent=`grep "gridcenter" ${sys}.rec.clean.gpf | awk '{print $4}'`
 
 
-vina --receptor ${sys}.rec.clean.pdbqt --ligand ${sys}.lig.gast.pdbqt --center_x $x_cent --size_x $x_size --center_y $y_cent --size_y $y_size --center_z $z_cent --size_z $z_size  --log docking${seed}.log --exhaustiveness 8 --out ${sys}.vina.$conditions.pdbqt --seed $seed --num_modes 20 --cpu 1 
+vina --receptor ${sys}.rec.clean.pdbqt --ligand ${sys}.lig.gast.pdbqt --center_x $x_cent --size_x $x_size --center_y $y_cent --size_y $y_size --center_z $z_cent --size_z $z_size  --log docking${seed_vina_pr}.log --exhaustiveness 8 --out ${sys}.vina.$conditions_vina_pr.pdbqt --seed_vina_pr $seed_vina_pr --num_modes 20 --cpu 1 
 
-echo "vina --receptor ${sys}.rec.clean.pdbqt --ligand ${sys}.lig.gast.pdbqt --center_x $x_cent --size_x $x_size --center_y $y_cent --size_y $y_size --center_z $z_cent --size_z $z_size  --log docking${seed}.log --exhaustiveness 8 --out ${sys}.vina.$conditions.pdbqt --seed $seed --num_modes 20 --cpu 1" > vina_$conditions.out
+echo "vina --receptor ${sys}.rec.clean.pdbqt --ligand ${sys}.lig.gast.pdbqt --center_x $x_cent --size_x $x_size --center_y $y_cent --size_y $y_size --center_z $z_cent --size_z $z_size  --log docking${seed_vina_pr}.log --exhaustiveness 8 --out ${sys}.vina.$conditions_vina_pr.pdbqt --seed_vina_pr $seed_vina_pr --num_modes 20 --cpu 1" > vina_$conditions_vina_pr.out

@@ -6,9 +6,9 @@
 #SBATCH --job-name=003_Vina_RMSDh
 #SBATCH --output=003_Vina_RMSDh.out
 
-cd $crossdock_dir
+cd $crossdock_dir_vina
 
-List_dir="$work_dir/zzz.family_lists"
+List_dir="$work_dir_vina_cd/zzz.family_lists"
 for ref_fam in `  cat $List_dir/zzz.Families.txt`;do
 
 echo ${ref_fam}

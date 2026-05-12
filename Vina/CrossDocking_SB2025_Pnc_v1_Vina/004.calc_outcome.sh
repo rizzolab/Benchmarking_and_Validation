@@ -1,6 +1,6 @@
-cd $crossdock_dir
+cd $crossdock_dir_vina
 
-List_dir="$work_dir/zzz.family_lists"
+List_dir="$work_dir_vina_cd/zzz.family_lists"
 
 for ref_fam in `  cat $List_dir/zzz.Families.txt`;do
 echo ${ref_fam}
@@ -20,9 +20,9 @@ cd $comp_sys
 echo $ref_sys " " $comp_sys
 ##########
 #CHECK COMPATIBLITY IN MINIMIZED !!!!!!!!!!
-if  grep -q "RMSDh" $dock6_crossdock_dir/zzz.crossdock/$ref_fam/$comp_sys/$ref_sys/${ref_sys}_${comp_sys}.min_scored.mol2 ; then
-   min_h=`grep "RMSDh" $dock6_crossdock_dir/zzz.crossdock/$ref_fam/$comp_sys/$ref_sys/${ref_sys}_${comp_sys}.min_scored.mol2| awk '{print $3}'` 
-   min_score=`grep "Grid_Score" $dock6_crossdock_dir/zzz.crossdock/$ref_fam/$comp_sys/$ref_sys/${ref_sys}_${comp_sys}.min_scored.mol2| awk '{print $3}'`
+if  grep -q "RMSDh" $dock6_cd_dir/zzz.crossdock/$ref_fam/$comp_sys/$ref_sys/${ref_sys}_${comp_sys}.min_scored.mol2 ; then
+   min_h=`grep "RMSDh" $dock6_cd_dir/zzz.crossdock/$ref_fam/$comp_sys/$ref_sys/${ref_sys}_${comp_sys}.min_scored.mol2| awk '{print $3}'` 
+   min_score=`grep "Grid_Score" $dock6_cd_dir/zzz.crossdock/$ref_fam/$comp_sys/$ref_sys/${ref_sys}_${comp_sys}.min_scored.mol2| awk '{print $3}'`
 else #If file doesnt exist min failed
    min_h=1000
    min_score=1000

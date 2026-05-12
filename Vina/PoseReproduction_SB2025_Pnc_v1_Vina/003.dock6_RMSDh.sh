@@ -1,5 +1,5 @@
 #Calculate RMSDh using DOCK6
-for sys in `  cat ${system_file} `
+for sys in `  cat ${system_file_pr} `
 do
 echo ${sys}
 
@@ -13,7 +13,7 @@ conformer_search_type                                        rigid
 use_internal_energy                                          yes
 internal_energy_rep_exp                                      12
 internal_energy_cutoff                                       100.0
-ligand_atom_file                                             ${sys}.${conditions}.docking.noH.mol2
+ligand_atom_file                                             ${sys}.${conditions_vina_pr}.docking.noH.mol2
 limit_max_ligands                                            no
 skip_molecule                                                no
 read_mol_solvation                                           no
@@ -28,7 +28,7 @@ atom_model                                                   united
 vdw_defn_file                                                $dock6_dir/parameters/vdw_AMBER_parm99.defn
 flex_defn_file                                               $dock6_dir/parameters/flex.defn
 flex_drive_file                                              $dock6_dir/parameters/flex_drive.tbl
-ligand_outfile_prefix                                        ${sys}.${conditions}.dockingRMSD
+ligand_outfile_prefix                                        ${sys}.${conditions_vina_pr}.dockingRMSD
 write_mol_solvation                                          no
 write_orientations                                           no
 num_scored_conformers                                        10
@@ -40,7 +40,7 @@ EOF
 
 $dock6_dir/bin/dock6 -i rescore.in -o rescore.out
 
-grep "HA_RMSDh:"  ${sys}.${conditions}.dockingRMSD_scored.mol2 | awk '{print $3}' >> RMSDh_grep.txt
+grep "HA_RMSDh:"  ${sys}.${conditions_vina_pr}.dockingRMSD_scored.mol2 | awk '{print $3}' >> RMSDh_grep.txt
 
 cd ../
 
