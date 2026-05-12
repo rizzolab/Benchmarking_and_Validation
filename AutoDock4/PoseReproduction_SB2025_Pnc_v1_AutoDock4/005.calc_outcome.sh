@@ -1,5 +1,5 @@
 #This script calculates success, score fail an sample fail rates and prints to screen
-rm Outcome.txt
+rm -f Outcome.txt
 
 
 for sys in `  cat ${system_file} `;do

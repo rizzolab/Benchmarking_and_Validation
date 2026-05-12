@@ -7,7 +7,7 @@ echo ${ref_fam}
 
 cd ${ref_fam}
 
-rm *outcomeh.txt
+rm -f *outcomeh.txt
 
 for ref_sys in `cat $dock6_rearrange_dir/${ref_fam}_Rearrangeh.txt`;do
 
@@ -31,7 +31,7 @@ fi
 
 RMSD1=`head -n 1 RMSDh_grep.txt | tail -n1 `
 
-rm RMSDh_grep_sort.txt
+rm -f RMSDh_grep_sort.txt
 
 sort -n RMSDh_grep.txt >> RMSDh_grep_sort.txt
 RMSD2=`head -n 1 RMSDh_grep_sort.txt`

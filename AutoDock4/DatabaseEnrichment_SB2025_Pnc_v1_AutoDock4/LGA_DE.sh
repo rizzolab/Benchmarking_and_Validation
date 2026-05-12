@@ -12,7 +12,7 @@ echo "Docking parameter file is being generated with ligand ${ligand} and recept
 sed -i '2i parameter_file /gpfs/projects/rizzo/ccorbo/Testing_Grounds/AutoDock/PoseReprod_Autodock/AD4_parameters_with_Na_K.dat # force field default parameter file' ${ligand}.dock.parameter.dpf
 input="${ligand}.dock.parameter.dpf"
 x=0
-rm ${ligand}.docking.dpf
+rm -f ${ligand}.docking.dpf
 touch ${ligand}.docking.dpf
      while IFS= read -r line
      do
@@ -51,6 +51,6 @@ touch ${ligand}.docking.dpf
      # record whether its an active or decoy and the score
      echo $lig_set " " $tmp_score  >> ${lig_set}_score_list.txt
 
-     #rm ${ligand}.docking.dlg
-     #rm ${ligand}.docking.dpf
-     #rm ${ligand}.dock.parameter.dpf
+     #rm -f ${ligand}.docking.dlg
+     #rm -f ${ligand}.docking.dpf
+     #rm -f ${ligand}.dock.parameter.dpf

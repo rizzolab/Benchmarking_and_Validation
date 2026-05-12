@@ -46,7 +46,7 @@ length=`wc -l List_of_decoys.txt | awk '{print $1}'`
 float_len=`echo " $length / 1000 " | bc -l`
 int_len=`echo " $float_len  " | bc -l | awk -F'.' '{print $1}'`
 
-rm Master_list.txt
+rm -f Master_list.txt
 
 for i in $( seq 0 $int_len );
 do

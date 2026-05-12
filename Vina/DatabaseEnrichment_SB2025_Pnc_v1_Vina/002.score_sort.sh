@@ -3,7 +3,7 @@ system_file="DUDE.systems.all"
 for system in `cat ${system_file}`; do
 echo $system
 cd $system
-   rm All_score.txt All_score_sort.txt
+   rm -f All_score.txt All_score_sort.txt
 
    cat actives/docking/active_score_list.txt >> All_score.txt
    cat decoys/docking/decoy_score_list.txt >> All_score.txt

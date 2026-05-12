@@ -11,7 +11,7 @@ list_of_fam="${LIST_DIR}/zzz.Families.txt"
 for ref_fam in `cat ${list_of_fam}`; do
   echo ${ref_fam}
   cd ${ref_fam}
-  rm *outcomeh.txt
+  rm -f *outcomeh.txt
   
   list_of_sys1="${RELIST_DIR}/${ref_fam}_Rearrangeh.txt"
   for ref_system in `cat ${list_of_sys1}`; do

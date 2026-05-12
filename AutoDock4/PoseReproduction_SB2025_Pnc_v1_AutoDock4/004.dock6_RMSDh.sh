@@ -6,8 +6,8 @@ echo ${sys}
 
 cd ${sys}
 
-rm RMSDh_grep.txt
-rm rescore.in
+rm -f RMSDh_grep.txt
+rm -f rescore.in
 
 cat >rescore.in<<EOF
 conformer_search_type                                        rigid

@@ -20,8 +20,8 @@ cd $ref_sys
 for comp_sys in `cat $dock6_rearrange_dir/${ref_fam}_Rearrangeh.txt`;do
 cd $comp_sys
 
-rm RMSDh_grep.txt
-rm rescore.in
+rm -f RMSDh_grep.txt
+rm -f rescore.in
 
 cat >rescore.in<<EOF
 conformer_search_type                                        rigid

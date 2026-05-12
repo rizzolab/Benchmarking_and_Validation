@@ -14,7 +14,7 @@ echo "Docking parameter file is being generated"
 sed -i "2i parameter_file ${work_dir}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${sys}.dock.parameter.dpf
 input="${sys}.dock.parameter.dpf"
 x=0
-rm ${sys}.docking.dpf
+rm -f ${sys}.docking.dpf
 touch ${sys}.docking.dpf
 
 #Modify input file

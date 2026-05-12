@@ -7,7 +7,7 @@
 #SBATCH --output=print_rank_pro.out
 for lig_sys in `cat FARMA.systems.all`;do
 cd $lig_sys
-rm tmp_scores_propairs.txt
+rm -f tmp_scores_propairs.txt
 for sys in `cat ../FARMA.systems.all `;do
 val=`grep Grid_Score ${lig_sys}_${sys}_0_scored.mol2| head -n1`
 echo $sys " " $val >> tmp_scores_propairs.txt

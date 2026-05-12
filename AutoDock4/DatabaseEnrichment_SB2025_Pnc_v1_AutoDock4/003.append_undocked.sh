@@ -3,7 +3,7 @@ module load anaconda/3
 
 system_file="DUDE.systems.all"
 for sys in `cat ${system_file}`; do
-rm $sys/All_score_append.txt
+rm -f $sys/All_score_append.txt
 
 act_count=`grep "${sys}" Total_LE_Actives.txt| awk '{print $1}'`
 

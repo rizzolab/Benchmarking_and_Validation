@@ -8,7 +8,7 @@ for ref_fam in `  cat $List_dir/zzz.Families.txt`;do
   
   cd ${ref_fam}
   
-  rm *outcomeh.txt
+  rm -f *outcomeh.txt
   
   for ref_sys in `cat $dock6_rearrange_dir/${ref_fam}_Rearrangeh.txt`;do
     cd $ref_sys
@@ -31,7 +31,7 @@ for ref_fam in `  cat $List_dir/zzz.Families.txt`;do
       
       RMSD1=`head -n ${Index} RMSDh_grep.txt | tail -n1 `
       
-      rm RMSDh_grep_sort.txt
+      rm -f RMSDh_grep_sort.txt
       
       sort -n RMSDh_grep.txt >> RMSDh_grep_sort.txt
       RMSD2=`head -n 1 RMSDh_grep_sort.txt`

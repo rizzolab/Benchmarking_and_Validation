@@ -13,7 +13,7 @@ cd FARMA2025_V1
 
 for lig_sys in `cat $work_dir/FARMA.systems.all`;do
   cd $lig_sys
-  rm tmp_scores_cognate*
+  rm -f tmp_scores_cognate*
   for sys in `cat $work_dir/FARMA.systems.all `;do
     cd $sys
     val=`awk '{print $2}' summary_of_results_1.0 | grep -v "#" | head -n1 | tr -d  ','`
@@ -29,7 +29,7 @@ done
 #Protein Family
 for lig_sys in `cat $work_dir/FARMA.systems.all`;do
   cd $lig_sys
-  rm tmp_scores_fam*
+  rm -f tmp_scores_fam*
   for sys in `cat $work_dir/FARMA.systems.all `;do
     cd $sys
     val=`awk '{print $2}' summary_of_results_1.0 | grep -v "#" | head -n1 | tr -d  ','`
@@ -52,7 +52,7 @@ done
 #Protein Class
 for lig_sys in `cat $work_dir/FARMA.systems.all`;do
   cd $lig_sys
-  rm tmp_scores_class*
+  rm -f tmp_scores_class*
   for sys in `cat $work_dir/FARMA.systems.all `;do
     cd $sys
     val=`awk '{print $2}' summary_of_results_1.0 | grep -v "#" | head -n1 | tr -d  ','`

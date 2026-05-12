@@ -12,7 +12,7 @@ echo "Docking parameter file is being generated with ligand ${comp_sys} and rece
 sed -i "2i parameter_file ${work_dir}/AD4_parameters_with_Na_K.dat # force field default parameter file" ${ref_sys}.dock.parameter.dpf
 input="${ref_sys}.dock.parameter.dpf"
 x=0
-rm ${ref_sys}.docking.dpf
+rm -f ${ref_sys}.docking.dpf
 touch ${ref_sys}.docking.dpf
      while IFS= read -r line
      do

@@ -6,7 +6,7 @@ dock_dir=$3
 mpi_dir=$4
 processes=$5
 
-mkdir ${system}
+mkdir -p ${system}
 cd ${system}
 
 

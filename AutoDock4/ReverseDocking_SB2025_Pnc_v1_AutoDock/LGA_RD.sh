@@ -12,7 +12,7 @@ echo "Docking parameter file is being generated"
 sed -i '2i parameter_file /gpfs/projects/rizzo/ccorbo/Testing_Grounds/AutoDock/PoseReprod_Autodock/AD4_parameters_with_Na_K.dat # force field default parameter file' ${rec_sys}.dock.parameter.dpf
 input="${rec_sys}.dock.parameter.dpf"
 x=0
-rm ${rec_sys}.docking.dpf
+rm -f ${rec_sys}.docking.dpf
 touch ${rec_sys}.docking.dpf
 while IFS= read -r line
 do

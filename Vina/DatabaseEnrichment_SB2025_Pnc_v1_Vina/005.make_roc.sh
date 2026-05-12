@@ -6,12 +6,11 @@
 system_file="DUDE.systems.all"
 mkdir -p zzz.plots
 for sys in `cat ${system_file}`; do
-sys=3CCW
 
    cd ${sys}
 
-   rm All_score_complt_sort_1.txt
-   rm All_score_complt_sort_10.txt
+   rm -f All_score_complt_sort_1.txt
+   rm -f All_score_complt_sort_10.txt
    
    act_count=`grep "${sys}" ../Total_LE_Actives.txt| awk '{print $1}'`
 

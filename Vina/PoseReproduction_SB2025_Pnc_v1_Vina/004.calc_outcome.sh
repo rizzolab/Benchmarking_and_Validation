@@ -1,5 +1,5 @@
 #Calculate success, score failure and sample failure rates
-rm Outcome.txt
+rm -f Outcome.txt
 
 
 for sys in `  cat ${system_file} `

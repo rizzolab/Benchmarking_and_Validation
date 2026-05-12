@@ -8,7 +8,7 @@ processes=$5
 
 subset="decoys"
 
-mkdir ${system}
+mkdir -p ${system}
 cd ${system}
 
 
