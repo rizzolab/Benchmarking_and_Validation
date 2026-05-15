@@ -2,30 +2,29 @@
 #SBATCH --partition=
 #SBATCH --time=
 #SBATCH --nodes=
-#SBATCH --ntasks=
+#SBATCH --ntasks-per-node=
 #SBATCH --job-name=DatabaseEnrichment
 #SBATCH --output=DatabaseEnrichment.out
 
 # This script will dock actives and decoys from the downloaded set of actives and decoys from DUDE
-# Written by: Christopher Corbo
+# Written by: C Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
-# Last Edit Date: 1/2024
-# Last Edit by: Christopher Corbo
+# Last Edit by: C Corbo
 
 #Set the variables below
 #Upper directory where all docking files are located
-testset=
+testset="YOURPATH/DUDE_11_DOCK6"
 
 #List of PDB which are located as subdirectory within testset directory
-system_file=
+system_file=DUDE.systems.all
 
 # Path to Dock Executable (Uppermost directory - dont include bin)
-dock=
+dock=YOURPATH
 
 #Path to MPI Library if running mpi - Else set to "No"
 mpi=No
 
-# Number of cores being run if mpi
+# Number of cores being run if mpi (nodes * ntasks-per-node)
 processes=
 
 for system in `cat ${system_file}`; do

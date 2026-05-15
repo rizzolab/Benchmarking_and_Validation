@@ -28,7 +28,7 @@ write_growth_tree                                            no
 use_internal_energy                                          yes
 internal_energy_rep_exp                                      12
 internal_energy_cutoff                                       100.0
-ligand_atom_file                                             ${system_dir}/zzz.DUDE_Files/${system}/decoys_final.mol2
+ligand_atom_file                                             ${system_dir}/${system}/decoys_final.mol2
 limit_max_ligands                                            no
 skip_molecule                                                no
 read_mol_solvation                                           no
@@ -36,7 +36,7 @@ calculate_rmsd                                               no
 use_database_filter                                          no
 orient_ligand                                                yes
 automated_matching                                           yes
-receptor_site_file                                           /${system_dir}/${system}/${system}.rec.clust.close.sph
+receptor_site_file                                           ${system_dir}/${system}/${system}.rec.clust.close.sph
 max_orientations                                             1000
 critical_points                                              no
 chemical_matching                                            no
@@ -49,7 +49,7 @@ grid_score_rep_rad_scale                                     1
 grid_score_vdw_scale                                         1
 grid_score_es_scale                                          1
 grid_lig_efficiency                                          no
-grid_score_grid_prefix                                       /${system_dir}/${system}/${system}.rec
+grid_score_grid_prefix                                       ${system_dir}/${system}/${system}.rec
 minimize_ligand                                              yes
 minimize_anchor                                              yes
 minimize_flexible_growth                                     yes
