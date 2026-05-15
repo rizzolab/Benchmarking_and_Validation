@@ -10,7 +10,13 @@
 #It may be best to run a single system at time instead of for loop due to long running duration
  module load autodock-vina/1.1.2
 
+#Where downloaded autodock files are
+testset="YOURPATH/DUDE_11_AutoDock"
+
 for system in `cat DUDE.systems.all`;do
+
+  cp -r $testset/$system ./
+
   dock_dir=docking
   work_dir=`pwd`
   cd $system

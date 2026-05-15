@@ -11,9 +11,14 @@
 module load mgltools/1.5.6
 module load autodock/4.2.6
 
+#Where downloaded autodock files are
+testset="YOURPATH/DUDE_11_AutoDock"
+
 #It is likely better to submit one system at a time rather than for loop entire family due to long runtime
-#for system in `cat DUDE.systems.all`;do
-system=3CCW
+for system in `cat DUDE.systems.all`;do
+
+cp -r $testset/$system ./
+
 dock_dir=docking
 work_dir=`pwd`
 cd $system
@@ -78,4 +83,4 @@ wait
 
 done
 cd ../../
-#done
+done

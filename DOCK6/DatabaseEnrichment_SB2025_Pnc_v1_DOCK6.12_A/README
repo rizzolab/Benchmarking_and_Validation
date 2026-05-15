@@ -8,9 +8,9 @@ Running Database Enrichment
   It is highly recommended to run this in parallel. DOCK takes on average 90 seconds to dock a single molecule on a single core.
 
   Set all appropriate variables in 001.submit_dock.sh 
-    sbatch 001.submit_dock.sh  
+    sbatch 001.submit.sh  
     or 
-    bash 001.submit_dock.sh 
+    bash 001.submit.sh 
 
 Analysis
   Set variables in 002.analysis.sh
