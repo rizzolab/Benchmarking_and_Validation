@@ -20,5 +20,5 @@ z_size=$(echo $z_tmp*0.375 | bc)
 z_cent=`grep "gridcenter" $testset_rd/$rec_sys/${rec_sys}.rec.clean.gpf | awk '{print $4}'`
 
 
-vina --receptor $testset_rd/$rec_sys/${rec_sys}.rec.clean.pdbqt --ligand $testset_rd/$lig_sys/${lig_sys}.lig.gast.pdbqt --center_x $x_cent --size_x $x_size --center_y $y_cent --size_y $y_size --center_z $z_cent --size_z $z_size  --log docking$seed_vina_rd.log --out ${lig_sys}.vina$seed_vina_rd.pdbqt --seed_vina_rd $seed_vina_rd --num_modes 1
+vina --receptor $testset_rd/$rec_sys/${rec_sys}.rec.clean.pdbqt --ligand $testset_rd/$lig_sys/${lig_sys}.lig.gast.pdbqt --center_x $x_cent --size_x $x_size --center_y $y_cent --size_y $y_size --center_z $z_cent --size_z $z_size  --log docking$seed_vina_rd.log --out ${lig_sys}.vina$seed_vina_rd.pdbqt --seed $seed_vina_rd --num_modes 1
 
