@@ -168,5 +168,5 @@ for i in range(N):
 plt.plot(y, x, 'w.', markersize = marksz)
 # Gridlines based on minor ticks
 ax.grid(which='minor', color='k', linestyle='-', linewidth=linesz)
-plt.savefig("heatmap.pdf")
+plt.savefig("heatmap.png")
 
