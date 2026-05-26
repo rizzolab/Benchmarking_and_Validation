@@ -3,6 +3,7 @@
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit Date: 10/2021
 # Last Edit by: C Corbo
+#Load a version of python with sklearn and also ensure that matplotlib is installed
 system_file="DUDE.systems.all"
 mkdir -p zzz.plots
 for sys in `cat ${system_file}`; do

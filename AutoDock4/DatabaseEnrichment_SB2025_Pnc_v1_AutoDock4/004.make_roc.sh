@@ -3,8 +3,7 @@
 # Written by: Christopher Corbo
 # Affiliation: Rizzo Lab, Stony Brook University
 # Last Edit by: C Corbo
-
-module load anaconda/3
+#Load a version of python with sklearn and also ensure that matplotlib is installed
 
 mkdir -p zzz.plots
 system_file="DUDE.systems.all"

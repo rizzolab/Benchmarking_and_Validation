@@ -1,8 +1,8 @@
-module load anaconda/3
+#Load a version of python with sklearn and also ensure that matplotlib is installed
 #List of PDB which are located as subdirectory within testset directory
 system_file=
 
-#Upper directory where all docking files are located
+#Upper directory where all docking files ending in DUDE_11_DOCK6
 testset=
 
 mkdir -p plots
