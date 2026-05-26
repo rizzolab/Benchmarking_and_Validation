@@ -20,14 +20,13 @@ system_file="SB2025.systems.all"
 #Path to dock executable upper most folder (dont include bin)
 dock_dir="YOURPATH/dock6.12"
 
+#If wanting to change seed, be aware "0" and "1" lead to identical behavior
+seed="0"
+
 #Experiment Name 
 #If running Pose Reproduction under multiple conditions give differing names for each experiment here
 # to keep track of separate experiments
-conditions="Default"
-
-
-#If wanting to change seed, be aware "0" and "1" lead to identical behavior
-seed="0"
+conditions="Default_${seed}"
 
 #srun uses all of the cores available to run the docking in parallel
 for system in `cat ${system_file}`; do
