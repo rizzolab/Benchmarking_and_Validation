@@ -9,7 +9,7 @@
 #This script determines how well the ligand from each system ranked it's correct protein target at 3 classification levels
 #Cognate, Protein Family, Protein Class
 #Cognate ranking
-cd FARMA2025_V1
+cd zzz.revdock
 
 for lig_sys in `cat $work_dir_ad4_rd/FARMA.systems.all`;do
   cd $lig_sys
