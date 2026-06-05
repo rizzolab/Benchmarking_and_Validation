@@ -12,7 +12,7 @@
 system_file=FARMA.systems.all
 # Path to prepared testset files
 testset=
-#DOCK6 directory
+#DOCK6 directory (Dont include bin in path)
 dock_dir="YOURPATH"
 
 seed="0"

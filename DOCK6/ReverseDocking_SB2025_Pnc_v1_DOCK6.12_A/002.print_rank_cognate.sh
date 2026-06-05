@@ -5,14 +5,17 @@
 #SBATCH --ntasks=
 #SBATCH --job-name=print_rank_cog
 #SBATCH --output=print_rank_cog.out
+
+rm -f zzy.cognate_rec_rank.dat
+
 for lig_sys in `cat FARMA.systems.all`;do
-cd $lig_sys
-rm -f tmp_scores_cog.txt
-for sys in `cat ../FARMA.systems.all `;do
-val=`grep Grid_Score ${lig_sys}_${sys}_0_scored.mol2| head -n1`
-echo $sys " " $val >> tmp_scores_cog.txt
-done
-rank=`sort -n -k4  tmp_scores_cog.txt| grep -n $lig_sys| awk -F ':' '{print $1}'`
-echo $lig_sys " " $rank >> ../zzy.cognate_rec_rank.dat
-cd ..
+  cd $lig_sys
+  rm -f tmp_scores_cog.txt
+  for sys in `cat ../FARMA.systems.all `;do
+    val=`grep Grid_Score ${lig_sys}_${sys}_0_scored.mol2| head -n1`
+    echo $sys " " $val >> tmp_scores_cog.txt
+  done
+  rank=`sort -n -k4  tmp_scores_cog.txt| grep -n $lig_sys| awk -F ':' '{print $1}'`
+  echo $lig_sys " " $rank >> ../zzy.cognate_rec_rank.dat
+  cd ..
 done

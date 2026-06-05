@@ -80,6 +80,6 @@ rank_ligands                                                 no
 EOF
 
 
-$dock_dir/dock6 -i FLX_${rec_system}_${seed}.in -o FLX_${rec_system}_${seed}.out
+$dock_dir/bin/dock6 -i FLX_${rec_system}_${seed}.in -o FLX_${rec_system}_${seed}.out
 
 cd ../
